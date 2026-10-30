@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FENQO RABBIL BRILIANT — Portfolio</title>
+  <!-- Font bergaya iOS (SF Pro fallback ke Inter Medium/SemiBold/Bold yang rapi) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Scroll Progress Bar di Atas Layar -->
+  <div class="scroll-progress-track" aria-hidden="true">
+    <div class="scroll-progress-bar" id="scrollProgressBar"></div>
+  </div>
+
+  <!-- Latar Belakang Off-White + Grid + Efek Luar Angkasa & Komet di Belakang Semua Konten -->
+  <div class="bg-grid" aria-hidden="true"></div>
+  <canvas id="cosmicCanvas" class="cosmic-canvas" aria-hidden="true"></canvas>
+
+  <!-- ================= NAVBAR ================= -->
+  <header class="navbar-wrapper">
+    <nav class="navbar">
+      <a href="#home" class="brand">
+        <span class="brand-cube"></span>
+        <span class="brand-text">FENQO<span class="dot-blue">.</span></span>
+      </a>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home" class="nav-link active">Profile</a></li>
+        <li><a href="#skill" class="nav-link">Skill</a></li>
+        <li><a href="#project" class="nav-link">Project</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+
+      <a href="#contact" class="nav-cta">Hubungi Saya</a>
+
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Buka Menu">
+        <span></span>
+        <span></span>
+      </button>
+    </nav>
+  </header>
+
+  <main class="main-content">
+    <!-- ================= HALAMAN AWAL / HERO PROFILE ================= -->
+    <section id="home" class="hero-section">
+      <div class="container hero-grid">
+
+        <!-- Kiri: Teks Nama Paper Statis & Deskripsi Profile -->
+        <div class="hero-content">
+          <div class="status-badge" data-scroll-item style="--delay: 0ms">
+            <span class="status-dot"></span>
+            <span>PORTFOLIO &amp; PROFILE RESMI</span>
+          </div>
+
+          <!-- Tulisan 3D Paper Minimalis: FENQO RABBIL (ke samping), BRILIANT di bawahnya -->
+          <div class="title-3d-stage" data-scroll-item style="--delay: 70ms">
+            <h1 class="hero-title-3d">
+              <span class="hero-title-row">
+                <span class="line-3d">FENQO</span>
+                <span class="line-3d accent-blue">RABBIL</span>
+              </span>
+              <span class="hero-title-row">
+                <span class="line-3d">BRILIANT</span>
+              </span>
+            </h1>
+          </div>
+
+          <!-- Deskripsi Profile -->
+          <p class="hero-desc" data-scroll-item style="--delay: 140ms">
+            Halo! Aku <strong>Fenkoo</strong> — seorang pelajar sekaligus <strong>Web Developer &amp; Android Modder</strong> yang fokus mengeksplorasi teknologi, mengembangkan website, aplikasi dan Aku selalu tertarik mencoba hal baru dan menciptakan sesuatu melalui teknologi.
+          </p>
+
+          <!-- Tag Keahlian Paper Minimalis dengan Aksen Warna Kalem -->
+          <div class="skill-tags" data-scroll-item style="--delay: 200ms">
+            <span class="tag-3d tag-blue"><span class="tag-dot"></span>Web & App Development</span>
+            <span class="tag-3d tag-coral"><span class="tag-dot"></span>IoT</span>
+            <span class="tag-3d tag-emerald"><span class="tag-dot"></span>Android modification</span>
+            <span class="tag-3d tag-amber"><span class="tag-dot"></span>Problem Solver</span>
+          </div>
+
+          <!-- Tombol Aksi -->
+          <div class="hero-actions" data-scroll-item style="--delay: 260ms">
+            <a href="#project" class="btn-3d btn-primary">
+              <span>Lihat Project</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+            <a href="#contact" class="btn-3d btn-secondary">
+              <span>Contact Saya</span>
+            </a>
+          </div>
+
+          <!-- Statistik Singkat Paper 3D -->
+          <div class="hero-stats" data-scroll-item style="--delay: 320ms">
+            <div class="stat-box-3d stat-blue">
+              <span class="stat-num">4</span>
+              <span class="stat-label">Project Selesai</span>
+            </div>
+            <div class="stat-box-3d stat-emerald">
+              <span class="stat-num">100%</span>
+              <span class="stat-label">Komitmen Kualitas</span>
+            </div>
+            <div class="stat-box-3d stat-coral">
+              <span class="stat-num">24/7</span>
+              <span class="stat-label">Siap Kolaborasi</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Kanan: Foto Profile Asli (Warna 100% Natural Tanpa Filter/Efek Warna) -->
+        <div class="hero-visual" data-scroll-item="scale" style="--delay: 120ms">
+          <div class="photo-3d-stage" id="photoInteractiveStage">
+            <div class="photo-3d-wrapper" id="photo3DCard">
+              <!-- Lapisan Belakang 3D (Biru & Hitam yang punya kedalaman Z) -->
+              <div class="photo-layer-back-blue"></div>
+              <div class="photo-layer-back-black"></div>
+
+              <!-- Frame Foto Utama -->
+              <div class="photo-frame-main">
+                <div class="photo-header-bar">
+                  <span class="bar-dot"></span>
+                  <span class="bar-dot"></span>
+                  <span class="bar-title">PROFILE.ID // FRB</span>
+                </div>
+
+                <div class="photo-img-container">
+                
+                  <img
+                    src="assets/profile.jpg"
+                    alt="Foto Profile Fenqo Rabbil Briliant"
+                    id="profileImage"
+                    class="profile-img"
+                  />
+                </div>
+
+                <div class="photo-footer-bar">
+                  <div>
+                    <div class="photo-name">FENQO RABBIL BRILIANT</div>
+                    <div class="photo-role">16 years old</div>
+                  </div>
+                  <div class="verified-badge" title="Verified Profile">✓</div>
+                </div>
+              </div>
+
+              <!-- Badge 3D INDONESIA (Desain Merah Putih Minimalis Profesional, Tanpa Badge Available) -->
+              <div class="floating-badge-3d badge-indonesia">
+                <span class="flag-id" aria-hidden="true">
+                  <span class="flag-red"></span>
+                  <span class="flag-white"></span>
+                </span>
+                <span class="badge-id-divider"></span>
+                <span class="badge-id-text">INDONESIA</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================= MENU SKILL ================= -->
+    <section id="skill" class="skill-section">
+      <div class="container">
+        <div class="section-header" data-scroll-item style="--delay: 0ms">
+          <div class="section-tag">CAPABILITIES &amp; EXPERTISE</div>
+          <h2 class="section-title-3d">
+            SKILL &amp; <span class="text-blue">KEAHLIAN SAYA.</span>
+          </h2>
+          <p class="section-subtitle">
+            Ini adalah skill yang saya miliki di bidang teknologi.
+          </p>
+        </div>
+
+        <!--
+          DAFTAR SKILL (4 CONTOH SEMENTARA):
+          Diatur langsung dari script.js (bagian DATA SKILL) supaya kamu gampang ubah judul, deskripsi, atau poin skill sendiri tanpa foto!
+        -->
+        <div class="skill-grid" id="skillGrid">
+          <!-- Diisi otomatis oleh script.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= MENU PROJECT ================= -->
+    <section id="project" class="project-section">
+      <div class="container">
+        <div class="section-header" data-scroll-item style="--delay: 0ms">
+          <div class="section-tag">SELECTED WORKS</div>
+          <h2 class="section-title-3d">
+            PROJECT &amp; <span class="text-blue">KARYA SAYA.</span>
+          </h2>
+          <p class="section-subtitle">
+            Kumpulan project yang udah saya selesaikan maupun yang sedang dalam proses pengembangan. Klik <strong>Lihat Detail Project</strong> untuk melihat foto project.
+          </p>
+        </div>
+
+        <!-- Filter Kategori Project -->
+        <div class="project-filters" id="projectFilters" data-scroll-item style="--delay: 80ms">
+          <button class="filter-btn active" data-filter="all">Semua Project</button>
+          <button class="filter-btn" data-filter="web">Website</button>
+          <button class="filter-btn" data-filter="app">Aplikasi</button>
+          <button class="filter-btn" data-filter="iot">IoT</button>
+        </div>
+
+        <!--
+          DAFTAR PROJECT:
+          Daftar project & foto-fotonya diatur dari script.js (bagian DATA PROJECT)
+          supaya kamu bebas nambahin foto project sesuka hati!
+        -->
+        <div class="project-grid" id="projectGrid">
+          <!-- Diisi otomatis oleh script.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= MENU CONTACT ================= -->
+    <section id="contact" class="contact-section">
+      <div class="container">
+        <div class="contact-banner-3d" data-scroll-item="scale" style="--delay: 0ms">
+          <div class="section-header contact-header">
+            <div class="section-tag">GET IN TOUCH</div>
+            <h2 class="section-title-3d">
+              HUBUNGI <span class="text-blue">SAYA.</span>
+            </h2>
+            <p class="section-subtitle">
+              Tertarik buat kolaborasi, diskusi project, atau sekadar kenalan? Langsung hubungi saya melalui platform di bawah ini.
+            </p>
+          </div>
+
+          <!-- Grid Kartu Contact 3D (Instagram, Discord, WhatsApp) -->
+          <div class="contact-grid">
+
+            <!-- 1. INSTAGRAM (Logo Instagram & Tombol Biru) -->
+            <div class="contact-card-3d contact-red" data-tilt-card data-scroll-item style="--delay: 60ms">
+              <div class="contact-card-inner">
+                <div class="contact-top">
+                  <div class="contact-icon-box icon-box-red">
+                    <!-- Logo Resmi Instagram -->
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                    </svg>
+                  </div>
+                </div>
+
+                <h3 class="contact-name">Instagram</h3>
+                <p class="contact-handle" id="igHandle">@penkoo17</p>
+                <p class="contact-desc">DM langsung lewat Instagram.</p>
+
+                <div class="contact-actions">
+                  <a href="https://www.instagram.com/penkoo17?exln=ZmxtY3c4dnpxYXQ5" target="_blank" rel="noopener noreferrer" class="btn-3d btn-primary btn-full">
+                    <span>Buka Instagram</span>
+                    <span>↗</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- 2. DISCORD (Tetap Sesuai Sebelumnya) -->
+            <div class="contact-card-3d contact-blue" data-tilt-card data-scroll-item style="--delay: 150ms">
+              <div class="contact-card-inner">
+                <div class="contact-top">
+                  <div class="contact-icon-box icon-box-blue">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/>
+                    </svg>
+                  </div>
+                  <span class="contact-platform-tag">COMMUNITY &amp; CHAT</span>
+                </div>
+
+                <h3 class="contact-name">Discord</h3>
+                <p class="contact-handle" id="discordHandle">penkoo18</p>
+                <p class="contact-desc">Add Discord saya buat ngobrol santai, voice call, atau diskusi bareng.</p>
+
+                <div class="contact-actions">
+                  <button type="button" class="btn-3d btn-secondary btn-full" id="copyDiscordBtn" data-copy="fenqo#0001">
+                    <span id="copyDiscordText">Salin Username Discord</span>
+                    <span>⧉</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- 3. WHATSAPP (Logo Resmi WhatsApp) -->
+            <div class="contact-card-3d contact-emerald" data-tilt-card data-scroll-item style="--delay: 240ms">
+              <div class="contact-card-inner">
+                <div class="contact-top">
+                  <div class="contact-icon-box icon-box-emerald">
+                    <!-- Logo Resmi WhatsApp (Bubble + Gagang Telepon) -->
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M12.031 2c-5.508 0-9.987 4.479-9.987 9.988 0 1.763.459 3.479 1.332 4.992L2 22l5.145-1.349c1.464.799 3.112 1.221 4.885 1.221 5.508 0 9.987-4.479 9.987-9.988 0-2.669-1.039-5.178-2.925-7.064C17.206 3.039 14.699 2 12.031 2zm0 18.234c-1.522 0-3.012-.409-4.316-1.182l-.309-.184-3.079.808.822-3.001-.202-.321c-.851-1.353-1.3-2.917-1.3-4.532 0-4.696 3.821-8.517 8.519-8.517 2.275 0 4.414.886 6.022 2.495 1.608 1.608 2.494 3.747 2.493 6.023 0 4.696-3.821 8.411-8.65 8.411zm4.672-6.376c-.256-.128-1.515-.748-1.749-.833-.235-.085-.406-.128-.576.128-.171.256-.662.833-.811 1.004-.149.171-.299.192-.555.064-.256-.128-1.081-.398-2.059-1.27-.762-.679-1.276-1.519-1.425-1.775-.149-.256-.016-.395.112-.522.115-.115.256-.299.384-.448.128-.149.171-.256.256-.427.085-.171.043-.32-.021-.448-.064-.128-.576-1.388-.79-1.901-.208-.498-.419-.43-.576-.438-.149-.007-.32-.009-.491-.009-.171 0-.448.064-.683.32-.235.256-.896.875-.896 2.135s.918 2.476 1.046 2.647c.128.171 1.805 2.755 4.373 3.864.611.264 1.087.421 1.459.539.613.195 1.171.167 1.612.101.492-.074 1.515-.619 1.729-1.217.213-.598.213-1.11.149-1.217-.064-.107-.235-.171-.491-.299z"/>
+                    </svg>
+                  </div>
+                </div>
+
+                <h3 class="contact-name">WhatsApp</h3>
+                <p class="contact-handle">0895-0728-3606</p>
+                <p class="contact-desc">Butuh respon cepat untuk urusan penting atau kerjaan? Chat langsung via WA.</p>
+
+                <div class="contact-actions">
+                  <a href="https://wa.me/6289507283606?text=Halo%20Fenko,%20saya%20lihat%20website%20portfolio%20kamu!" target="_blank" rel="noopener noreferrer" class="btn-3d btn-emerald btn-full">
+                    <span>Chat WhatsApp</span>
+                    <span>↗</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ================= MODAL POPUP DETAIL PROJECT (FOTO PROJECT) ================= -->
+  <div class="project-modal-backdrop" id="projectModal" aria-hidden="true">
+    <div class="project-modal-card" role="dialog" aria-modal="true" aria-labelledby="modalProjectTitle">
+      <!-- Header Bar Paper -->
+      <div class="modal-header-bar">
+        <div class="modal-header-dots">
+          <span class="bar-dot"></span>
+          <span class="bar-dot"></span>
+          <span class="modal-header-id" id="modalProjectId">PRJ // 01</span>
+        </div>
+        <button type="button" class="modal-close-btn" id="modalCloseBtn" aria-label="Tutup Detail Project">
+          ✕
+        </button>
+      </div>
+
+      <!-- Konten Utama Modal -->
+      <div class="modal-body">
+        <!-- Area Foto Project Utama -->
+        <div class="modal-photo-frame">
+          <img src="assets/project-preview.svg" alt="Foto Project" id="modalProjectImg" class="modal-project-img" />
+        </div>
+
+        <!-- Thumbnail Galeri Foto Project (Muncul jika foto lebih dari 1) -->
+        <div class="modal-photo-thumbs" id="modalPhotoThumbs"></div>
+
+        <!-- Informasi Detail Project -->
+        <div class="modal-info">
+          <div class="modal-meta-row">
+            <div class="modal-meta-left">
+              <span class="project-category" id="modalProjectCategory">Website</span>
+              <span class="project-year" id="modalProjectYear">2026</span>
+            </div>
+            <!-- Status Project (Selesai / Dalam Proses) -->
+            <div id="modalProjectStatus"></div>
+          </div>
+
+          <h3 class="modal-title" id="modalProjectTitle">Judul Project</h3>
+          <p class="modal-desc" id="modalProjectDesc">Deskripsi lengkap project.</p>
+
+          <div class="project-tech modal-tech" id="modalProjectTech"></div>
+
+          <div class="modal-actions">
+            <a href="#" target="_blank" rel="noopener noreferrer" class="btn-3d btn-primary" id="modalExternalLink" style="display: none;">
+              <span>Buka Live Project</span>
+              <span>↗</span>
+            </a>
+            <button type="button" class="btn-3d btn-secondary" id="modalCloseFooterBtn">
+              <span>Tutup Preview</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <span class="brand-cube"></span>
+        <span>FENQO RABBIL BRILIANT</span>
+      </div>
+      <p class="footer-copy">© <span id="yearNow">2026</span> FENQO RABBIL BRILIANT. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
