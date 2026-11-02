@@ -1,59 +1,87 @@
-/* ==========================================================================
-   SCRIPT PORTFOLIO — FENQO RABBIL BRILIANT
-   Fitur:
-   1. Foto Profile 3D dengan interaksi minimalis saat disentuh / diarahkan kursor
-      (Nama Hero tetap statis tanpa efek mouse)
-   2. Latar Belakang Cosmic / Luar Angkasa & Komet bergerak di seluruh latar putih
-      (Komet berekor, bintang 4-sudut ✦, garis rasi bintang, & planet cincin minimalis)
-   3. Animasi Scroll 3D dua arah (muncul halus saat scroll turun maupun naik)
-      + Scroll Progress Bar & Parallax Cosmic
-   ========================================================================== */
-
-/**
- * 1A. DATA SKILL GUE (4 CONTOH SEMENTARA — BEBAS DIUBAH SENDIRI TANPA FOTO)
- * --------------------------------------------------------------------------
- * Kamu bisa langsung ubah judul (`title`), label (`subtitle`), level (`level`),
- * deskripsi (`description`), atau daftar poin (`items`) di bawah ini sesuka hati!
- */
 const skillsData = [
   {
-    id: "01",
-    title: "Web & App Development",
-    subtitle: "Frontend & Interactive Web",
-    level: "Beginner",
+    id: "KEAHLIAN 01",
+    icon: "code",
+    title: "Full-Stack Development",
+    subtitle: "Web, Application & Software Development",
+    level: "Intermediate",
     description:
-      "Membangun website dan aplikasi dengan mempelajari struktur, tampilan, serta fungsi interaktif sesuai kebutuhan project.",
-    items: ["HTML5 & CSS3", "JavaScript (ES6+)", "Responsive Layout", "Web Animation", "Mobile App Development"]
+      "Mengembangkan website, aplikasi, dan berbagai tools software dengan menggabungkan desain antarmuka, logika pemrograman, serta fungsionalitas sesuai kebutuhan project. Mencakup pengembangan frontend, backend, hingga pembuatan solusi digital sederhana.",
+    items: [
+      "HTML5 & CSS3",
+      "JavaScript (ES6+)",
+      "Responsive Layout",
+      "Web Animation",
+      "Frontend Development",
+      "Backend Development",
+      "Mobile App Development",
+      "Software & Tools Development"
+    ]
   },
   {
-    id: "02",
+    id: "KEAHLIAN 02",
+    icon: "android",
     title: "Android Modification",
-    subtitle: "Advanced System Customization",
+    subtitle: "Advanced System Customization & Troubleshooting",
     level: "Advanced",
     description:
-      "Mengeksplorasi dan memodifikasi sistem Android, mulai dari akses root hingga kustomisasi sistem menggunakan berbagai tools dan metode.",
-    items: ["Ubl", "Fix Softbrick,Hardbrick", "Custom Recovery", "Custom/Port rom", "root & Module", "Kernel & Boot Image"]
+      "Mengeksplorasi, memodifikasi, dan melakukan kustomisasi sistem Android, mulai dari akses root, instalasi custom ROM, modifikasi kernel, hingga konfigurasi komponen sistem dan troubleshooting perangkat Android. Mencakup pemahaman mendalam tentang struktur sistem, keamanan, dan optimasi performa perangkat.",
+    items: [
+      "Ubl",
+      "Fix Softbrick,Hardbrick",
+      "Custom Recovery",
+      "Custom/Port rom",
+      "root",
+      "Kernel & Boot Image"
+    ]
   },
   {
-    id: "03",
+    id: "KEAHLIAN 03",
+    icon: "windows",
     title: "Windows Tweaking & Customization",
     subtitle: "OS Installation & System Optimization",
-    level: "Intermediate — Advanced",
+    level: "Intermediate",
     description:
       "Menguasai berbagai konfigurasi dan penyesuaian Windows, termasuk instalasi custom OS, tweaking sistem, serta optimasi performa sesuai kebutuhan.",
-    items: ["system Tweaking", "OS Custom installation", "State Management", "improve computer performance"]
+    items: [
+      "system Tweaking",
+      "OS Custom installation",
+      "Windows Customization",
+      "improve computer performance"
+    ]
   },
   {
-    id: "04",
+    id: "KEAHLIAN 04",
+    icon: "security",
     title: "Cybersecurity Fundamentals",
     subtitle: "Basic Security Exploration",
     level: "Beginner — Learning",
     description:
       "Sedang mempelajari dasar-dasar keamanan siber, termasuk pengenalan sistem, jaringan, dan perlindungan informasi digital.",
-    items: ["Cybersecurity Basics", "Debugging & Testing", "- Basic Security Concepts", "Linux & Tools"]
-  }
+    items: [
+      "Cybersecurity Basics",
+      "Basic Penetration Testing",
+      "Basic Security Concepts",
+      "Linux & Security Tools"
+    ]
+  },
+  {
+    id: "KEAHLIAN 05",
+    icon: "iot",
+    title: "IoT & Embedded Systems",
+    subtitle: "Microcontroller Programming & Hardware Integration",
+    level: "beginner - Learning",
+    description:
+      "Mengembangkan sistem berbasis Internet of Things dengan menggabungkan pemrograman, mikrokontroler, dan perangkat elektronik untuk menciptakan sistem otomatisasi serta perangkat yang saling terintegrasi.",
+    items: [
+      "IoT Programming",
+      "Microcontroller Programming",
+      "Hardware Integration",
+      "Sensor Integration",
+      "Embedded Systems Development"
+    ]
+  },
 ];
-
 
 const projectsData = [
   {
@@ -62,12 +90,12 @@ const projectsData = [
     category: "app",
     categoryLabel: "Mobile App",
     year: "2026",
-    status: "done", // "done" = Selesai (Tanda Centang) | "progress" = Dalam Proses
+    status: "done",
     description:
       "aplikasi penghitung kalori,protein harian berdasarkan data fisik pengguna. dan sub fitur yaitu penghitung ketika patungan dengan sangat akurat.",
     tech: ["HTML5", "CSS3", "JavaScript", "UI/UX"],
-    images: ["assets/nutritrack2.jpg", "assets/nutritrack1.jpg"], // <-- Ganti dengan path foto project lu, misal: ["assets/project1.jpg"]
-    externalLink: "" // Opsional: isi dengan URL (misal "https://...") jika ingin menampilkan tombol Buka Live Project
+    images: ["assets/nutritrack2.jpg", "assets/nutritrack1.jpg"],
+    externalLink: "https://www.mediafire.com/file/0auvbl20ydq1hqn/MealSplit.apk/file"
   },
   {
     id: "02",
@@ -75,7 +103,7 @@ const projectsData = [
     category: "web",
     categoryLabel: "Website",
     year: "2026",
-    status: "progress",
+    status: "stalled",
     description:
       "website yang mampu mendeteksi arus lalu lintas macet atau tidak, dan menganalisa nya.",
     tech: ["Web", "Local", "in development"],
@@ -106,7 +134,7 @@ const projectsData = [
       "Sentinel adalah website yang mampu mencari celah keamanan pada website apapun.",
     tech: ["linux", "Tools", "Security"],
     images: ["assets/sentinel.jpg"],
-    externalLink: ""
+    externalLink: "https://sentinelpemkw.streamlit.app/"
   },
   {
     id: "05",
@@ -136,12 +164,130 @@ const projectsData = [
   }
 ];
 
-/* ==========================================================================
-   2. RENDER DAFTAR SKILL, DAFTAR PROJECT, & MODAL FOTO DETAIL PROJECT
-   ========================================================================== */
 const skillGrid = document.getElementById("skillGrid");
 const projectGrid = document.getElementById("projectGrid");
 const filterButtons = document.querySelectorAll(".filter-btn");
+
+const skillIcons = {
+  code: `
+    <polyline points="16 18 22 12 16 6"></polyline>
+    <polyline points="8 6 2 12 8 18"></polyline>
+    <line x1="14" y1="4" x2="10" y2="20"></line>
+  `,
+  android: `
+    <rect x="4" y="4" width="16" height="16" rx="3"></rect>
+    <rect x="9" y="9" width="6" height="6" rx="1"></rect>
+    <line x1="9" y1="1" x2="9" y2="4"></line>
+    <line x1="15" y1="1" x2="15" y2="4"></line>
+    <line x1="9" y1="20" x2="9" y2="23"></line>
+    <line x1="15" y1="20" x2="15" y2="23"></line>
+    <line x1="20" y1="9" x2="23" y2="9"></line>
+    <line x1="20" y1="14" x2="23" y2="14"></line>
+    <line x1="1" y1="9" x2="4" y2="9"></line>
+    <line x1="1" y1="14" x2="4" y2="14"></line>
+  `,
+  windows: `
+    <line x1="4" y1="21" x2="4" y2="14"></line>
+    <line x1="4" y1="10" x2="4" y2="3"></line>
+    <line x1="12" y1="21" x2="12" y2="12"></line>
+    <line x1="12" y1="8" x2="12" y2="3"></line>
+    <line x1="20" y1="21" x2="20" y2="16"></line>
+    <line x1="20" y1="12" x2="20" y2="3"></line>
+    <line x1="1" y1="14" x2="7" y2="14"></line>
+    <line x1="9" y1="8" x2="15" y2="8"></line>
+    <line x1="17" y1="16" x2="23" y2="16"></line>
+  `,
+  security: `
+    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+    <path d="M9 12l2 2 4-4"></path>
+  `,
+  iot: `
+    <circle cx="12" cy="12" r="2"></circle>
+    <path d="M16.24 7.76a6 6 0 0 1 0 8.49m-8.48-.01a6 6 0 0 1 0-8.49m11.31-2.82a10 10 0 0 1 0 14.14m-14.14 0a10 10 0 0 1 0-14.14"></path>
+  `,
+  network: `
+    <circle cx="12" cy="5" r="2.25"></circle>
+    <circle cx="5" cy="18.5" r="2.25"></circle>
+    <circle cx="19" cy="18.5" r="2.25"></circle>
+    <line x1="10.9" y1="7" x2="6.1" y2="16.5"></line>
+    <line x1="13.1" y1="7" x2="17.9" y2="16.5"></line>
+    <line x1="7.25" y1="18.5" x2="16.75" y2="18.5"></line>
+  `,
+  server: `
+    <rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect>
+    <rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect>
+    <line x1="6" y1="6" x2="6.01" y2="6"></line>
+    <line x1="6" y1="18" x2="6.01" y2="18"></line>
+  `,
+  database: `
+    <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+    <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
+    <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
+  `,
+  design: `
+    <path d="M12 19l7-7 3 3-7 7-3-3z"></path>
+    <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path>
+    <path d="M2 2l7.586 7.586"></path>
+    <circle cx="11" cy="11" r="2"></circle>
+  `,
+  terminal: `
+    <polyline points="4 17 10 11 4 5"></polyline>
+    <line x1="12" y1="19" x2="20" y2="19"></line>
+  `
+};
+
+const skillIconKeywords = [
+  { key: "android", words: ["android", "rom", "root", "smartphone"] },
+  { key: "windows", words: ["windows", "operating system", "tweak"] },
+  { key: "security", words: ["cyber", "security", "keamanan", "pentest", "hacking"] },
+  { key: "iot", words: ["iot", "embedded", "microcontroller", "arduino", "esp32", "hardware"] },
+  { key: "network", words: ["network", "jaringan", "mikrotik", "cisco"] },
+  { key: "server", words: ["server", "devops", "cloud", "hosting"] },
+  { key: "database", words: ["database", "sql", "data"] },
+  { key: "design", words: ["design", "ui/ux", "desain", "figma", "grafis"] },
+  { key: "terminal", words: ["linux", "terminal", "script", "automation"] },
+  { key: "code", words: ["web", "stack", "develop", "program", "software", "app"] }
+];
+
+function getSkillIconSVG(skill) {
+  let key = String(skill.icon || "").toLowerCase().trim();
+
+  if (!skillIcons[key]) {
+    const text = `${skill.title} ${skill.subtitle}`.toLowerCase();
+    const match = skillIconKeywords.find((entry) =>
+      entry.words.some((word) => text.includes(word))
+    );
+    key = match ? match.key : "code";
+  }
+
+  return `
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      ${skillIcons[key]}
+    </svg>
+  `;
+}
+
+function getSkillLevelBars(levelStr = "") {
+  const lower = levelStr.toLowerCase();
+  let activeBars = 2;
+
+  if (lower.includes("advanced") && lower.includes("intermediate")) {
+    activeBars = 3;
+  } else if (lower.includes("advanced") || lower.includes("expert") || lower.includes("mahir")) {
+    activeBars = 4;
+  } else if (lower.includes("intermediate") || lower.includes("menengah")) {
+    activeBars = 3;
+  } else {
+    activeBars = 2;
+  }
+
+  return [1, 2, 3, 4]
+    .map(
+      (barIdx) =>
+        `<span class="signal-bar ${barIdx <= activeBars ? "is-active" : ""}"></span>`
+    )
+    .join("");
+}
 
 function renderSkills() {
   if (!skillGrid) return;
@@ -149,32 +295,53 @@ function renderSkills() {
   skillGrid.innerHTML = skillsData
     .map((skill, index) => {
       const themeIndex = (index % 4) + 1;
+      const numWatermark = String(index + 1).padStart(2, "0");
+
       return `
       <article class="skill-card-3d theme-s${themeIndex}" data-tilt-card data-scroll-item style="--delay: ${(index % 2) * 90}ms">
         <div class="skill-card-top">
-          <div class="skill-badge-num">SKL // ${skill.id}</div>
-          <span class="skill-level-pill">
+          <div class="skill-badge-num">${skill.id}</div>
+          <div class="skill-level-pill">
             <span class="skill-level-dot"></span>
             <span>${skill.level}</span>
-          </span>
+            <span class="skill-signal-bars" aria-hidden="true">
+              ${getSkillLevelBars(skill.level)}
+            </span>
+          </div>
         </div>
 
         <div class="skill-card-body">
-          <span class="skill-subtitle">${skill.subtitle}</span>
-          <h3 class="skill-title">${skill.title}</h3>
+          <div class="skill-head-row">
+            <div class="skill-icon-box" aria-hidden="true">
+              ${getSkillIconSVG(skill)}
+            </div>
+            <div class="skill-head-text">
+              <span class="skill-subtitle">${skill.subtitle}</span>
+              <h3 class="skill-title">${skill.title}</h3>
+            </div>
+            <span class="skill-watermark" aria-hidden="true">${numWatermark}</span>
+          </div>
+
           <p class="skill-desc">${skill.description}</p>
 
-          <div class="skill-items">
-            ${skill.items
-              .map(
-                (item) => `
-              <span class="skill-item-pill">
-                <span class="skill-item-check">✓</span>
-                <span>${item}</span>
-              </span>
-            `
-              )
-              .join("")}
+          <div class="skill-stack-panel">
+            <div class="skill-stack-header">
+              <span class="skill-stack-label">FOKUS &amp; KEAHLIAN</span>
+              <span class="skill-stack-count">${skill.items.length} Fokus</span>
+            </div>
+            <div class="skill-items">
+              ${skill.items
+                .map((item) => {
+                  const cleanItem = String(item).replace(/^-+\s*/, "");
+                  return `
+                  <span class="skill-item-pill">
+                    <span class="skill-item-check">✓</span>
+                    <span>${cleanItem}</span>
+                  </span>
+                `;
+                })
+                .join("")}
+            </div>
           </div>
         </div>
       </article>
@@ -187,7 +354,9 @@ function renderSkills() {
 }
 
 function getStatusBadgeHTML(status) {
-  if (status === "progress") {
+  const normalized = String(status || "done").toLowerCase();
+
+  if (normalized === "progress") {
     return `
       <span class="project-status-badge status-progress" title="Sedang Dalam Proses Pengerjaan">
         <span class="status-progress-dot"></span>
@@ -196,7 +365,20 @@ function getStatusBadgeHTML(status) {
     `;
   }
 
-  // Default: "done" (Tanda centang minimalis & rapi)
+  if (normalized === "stalled" || normalized === "terhenti" || normalized === "mangkrak") {
+    return `
+      <span class="project-status-badge status-stalled" title="Project Terhenti Sementara">
+        <span class="status-stalled-icon">
+          <svg width="8" height="8" viewBox="0 0 12 12" fill="none">
+            <rect x="2.2" y="2" width="2.6" height="8" rx="1" fill="currentColor"></rect>
+            <rect x="7.2" y="2" width="2.6" height="8" rx="1" fill="currentColor"></rect>
+          </svg>
+        </span>
+        <span>Terhenti</span>
+      </span>
+    `;
+  }
+
   return `
     <span class="project-status-badge status-done" title="Project Selesai">
       <span class="status-check-circle">
@@ -219,8 +401,8 @@ function renderProjects(filterCategory = "all") {
 
   projectGrid.innerHTML = filtered
     .map((project, index) => {
-      // Setiap project memiliki 1 warna unik tersendiri (1 warna = 1 project, tanpa ungu)
-      const projectThemeIndex = (parseInt(project.id, 10) - 1) % 6 + 1 || (index % 6) + 1;
+      const projectThemeIndex =
+        ((parseInt(project.id, 10) - 1) % 6) + 1 || (index % 6) + 1;
       return `
       <article class="project-card-3d theme-p${projectThemeIndex}" data-tilt-card data-scroll-item style="--delay: ${(index % 3) * 85}ms">
         <div class="project-thumb">
@@ -264,7 +446,6 @@ function renderProjects(filterCategory = "all") {
     })
     .join("");
 
-  // Event Listener untuk tombol "Lihat Detail Project"
   const detailButtons = projectGrid.querySelectorAll("[data-open-project]");
   detailButtons.forEach((btn) => {
     btn.addEventListener("click", () => {
@@ -277,7 +458,6 @@ function renderProjects(filterCategory = "all") {
   observeScrollItems();
 }
 
-// Fungsi Modal Popup Detail Project (Menampilkan Foto Project)
 const projectModal = document.getElementById("projectModal");
 const modalCloseBtn = document.getElementById("modalCloseBtn");
 const modalCloseFooterBtn = document.getElementById("modalCloseFooterBtn");
@@ -316,7 +496,6 @@ function openProjectModal(projectId) {
     .map((t) => `<span class="tech-pill">${t}</span>`)
     .join("");
 
-  // Jika project memiliki lebih dari 1 foto, tampilkan tombol pilihan foto di bawahnya
   if (photoList.length > 1) {
     modalPhotoThumbs.innerHTML = photoList
       .map(
@@ -340,7 +519,6 @@ function openProjectModal(projectId) {
     modalPhotoThumbs.innerHTML = "";
   }
 
-  // Tombol link eksternal opsional
   if (project.externalLink && project.externalLink.trim() !== "") {
     modalExternalLink.href = project.externalLink;
     modalExternalLink.style.display = "inline-flex";
@@ -386,36 +564,56 @@ filterButtons.forEach((btn) => {
   });
 });
 
-/* ==========================================================================
-   3. FOTO PROFILE 3D DENGAN INTERAKSI MINIMALIS + AUTO-FALLBACK ANTI-ERROR
-   ========================================================================== */
 function initProfilePhotoFallback() {
   const profileImg = document.getElementById("profileImage");
-  if (!profileImg) return;
+  if (profileImg) {
+    const candidatePaths = [
+      "assets/profile-placeholder.png",
+      "assets/profile.png",
+      "assets/profile.jpg",
+      "assets/profile.jpeg",
+      "assets/profile.webp",
+      "assets/pp.png",
+      "assets/pp.jpg",
+      "assets/profile-placeholder.svg"
+    ];
 
-  // Daftar nama file foto yang otomatis dicoba berurutan jika kamu ganti foto di folder assets/
-  const candidatePaths = [
-    "assets/profile-placeholder.png",
-    "assets/profile.png",
-    "assets/profile.jpg",
-    "assets/profile.jpeg",
-    "assets/profile.webp",
-    "assets/pp.png",
-    "assets/pp.jpg",
-    "assets/profile-placeholder.svg"
-  ];
+    let tryIndex = 0;
 
-  let tryIndex = 0;
-
-  profileImg.addEventListener("error", () => {
-    while (tryIndex < candidatePaths.length) {
-      const nextSrc = candidatePaths[tryIndex++];
-      if (!profileImg.getAttribute("src").endsWith(nextSrc)) {
-        profileImg.src = nextSrc;
-        break;
+    profileImg.addEventListener("error", () => {
+      while (tryIndex < candidatePaths.length) {
+        const nextSrc = candidatePaths[tryIndex++];
+        if (!profileImg.getAttribute("src").endsWith(nextSrc)) {
+          profileImg.src = nextSrc;
+          break;
+        }
       }
-    }
-  });
+    });
+  }
+
+  const schoolLogoImg = document.getElementById("schoolLogoImg");
+  if (schoolLogoImg) {
+    const logoCandidates = [
+      "assets/school-logo.jpg",
+      "assets/school-logo.png",
+      "assets/school-logo.jpeg",
+      "assets/school-logo.webp",
+      "assets/logo.png",
+      "assets/logo.jpg"
+    ];
+
+    let logoIndex = 0;
+
+    schoolLogoImg.addEventListener("error", () => {
+      while (logoIndex < logoCandidates.length) {
+        const nextLogo = logoCandidates[logoIndex++];
+        if (!schoolLogoImg.getAttribute("src").endsWith(nextLogo)) {
+          schoolLogoImg.src = nextLogo;
+          break;
+        }
+      }
+    });
+  }
 }
 
 function initPhoto3DInteraction() {
@@ -423,7 +621,6 @@ function initPhoto3DInteraction() {
   const card = document.getElementById("photo3DCard");
   if (!stage || !card) return;
 
-  // Sudut 3D default saat diam agar efek 3D tetap kelihatan keren
   const defaultRX = 2;
   const defaultRY = -4;
 
@@ -443,11 +640,11 @@ function initPhoto3DInteraction() {
   let rafId = null;
 
   function animatePhoto() {
-    currentRX += (targetRX - currentRX) * 0.1;
-    currentRY += (targetRY - currentRY) * 0.1;
-    currentLift += (targetLift - currentLift) * 0.1;
-    currentLayerX += (targetLayerX - currentLayerX) * 0.1;
-    currentLayerY += (targetLayerY - currentLayerY) * 0.1;
+    currentRX += (targetRX - currentRX) * 0.16;
+    currentRY += (targetRY - currentRY) * 0.16;
+    currentLift += (targetLift - currentLift) * 0.16;
+    currentLayerX += (targetLayerX - currentLayerX) * 0.16;
+    currentLayerY += (targetLayerY - currentLayerY) * 0.16;
 
     card.style.setProperty("--photo-rx", `${currentRX.toFixed(2)}deg`);
     card.style.setProperty("--photo-ry", `${currentRY.toFixed(2)}deg`);
@@ -481,16 +678,17 @@ function initPhoto3DInteraction() {
     const normX = Math.max(-1, Math.min(1, (x - rect.width / 2) / (rect.width / 2)));
     const normY = Math.max(-1, Math.min(1, (y - rect.height / 2) / (rect.height / 2)));
 
-    // Sudut miring 3D minimalis (maksimal ~4.2 derajat agar cakep & tidak lebay)
-    targetRY = normX * 4.2;
-    targetRX = -normY * 4.2;
-    targetLift = -4;
+    const isMobile = window.innerWidth <= 768;
+    const maxTilt = isMobile ? 2.8 : 3.8;
+    const maxShift = isMobile ? 2.6 : 4.2;
 
-    // Pergeseran halus layer belakang 3D & badge depan
-    targetLayerX = -normX * 4.5;
-    targetLayerY = -normY * 4.5;
+    targetRY = normX * maxTilt;
+    targetRX = -normY * maxTilt;
+    targetLift = isMobile ? -2.5 : -3.5;
 
-    // Posisi kilau halus
+    targetLayerX = -normX * maxShift;
+    targetLayerY = -normY * maxShift;
+
     const shineX = ((x / rect.width) * 100).toFixed(1);
     const shineY = ((y / rect.height) * 100).toFixed(1);
     card.style.setProperty("--shine-x", `${shineX}%`);
@@ -510,14 +708,12 @@ function initPhoto3DInteraction() {
     startAnimation();
   }
 
-  // Interaksi Mouse (Hanya pada area foto)
   stage.addEventListener("mousemove", (e) => {
     handlePointerMove(e.clientX, e.clientY);
   });
 
   stage.addEventListener("mouseleave", resetPhoto);
 
-  // Interaksi Sentuhan (Touch / Tap di HP atau Layar Sentuh)
   stage.addEventListener(
     "touchstart",
     (e) => {
@@ -544,7 +740,6 @@ function initPhoto3DInteraction() {
     setTimeout(resetPhoto, 180);
   });
 
-  // Efek sentuh/klik singkat (gentle 3D pulse)
   stage.addEventListener("click", () => {
     targetLift = -7;
     targetLayerX = 5;
@@ -559,9 +754,6 @@ function initPhoto3DInteraction() {
   });
 }
 
-/* ==========================================================================
-   4. INTERAKSI MOUSE MINIMALIS PADA KARTU PROJECT & CONTACT
-   ========================================================================== */
 function initSubtleTiltCards() {
   const cards = document.querySelectorAll("[data-tilt-card]");
 
@@ -578,9 +770,9 @@ function initSubtleTiltCards() {
     let rafId = null;
 
     function updateTransform() {
-      currentX += (targetX - currentX) * 0.12;
-      currentY += (targetY - currentY) * 0.12;
-      currentLift += (targetLift - currentLift) * 0.12;
+      currentX += (targetX - currentX) * 0.18;
+      currentY += (targetY - currentY) * 0.18;
+      currentLift += (targetLift - currentLift) * 0.18;
 
       card.style.transform = `perspective(1000px) rotateX(${currentX.toFixed(2)}deg) rotateY(${currentY.toFixed(2)}deg) translate3d(0, ${currentLift.toFixed(2)}px, 0)`;
 
@@ -592,6 +784,9 @@ function initSubtleTiltCards() {
       if (stillMoving) {
         rafId = requestAnimationFrame(updateTransform);
       } else {
+        if (targetX === 0 && targetY === 0 && targetLift === 0) {
+          card.style.transform = "";
+        }
         rafId = null;
       }
     }
@@ -627,11 +822,6 @@ function initSubtleTiltCards() {
   });
 }
 
-/* ==========================================================================
-   5. LATAR BELAKANG COSMIC 3D & KOMET ORANGE-MERAH INTERAKTIF
-   UI tetap Off-White (#FAFAF7), Biru (#0066FF), & Hitam (#0A0A0A)
-   Komet: Banyak, 3D Berlapis (Kedalaman Z), & Interaktif terhadap Kursor/Sentuhan
-   ========================================================================== */
 let globalSmoothScrollY = window.scrollY;
 
 function initCosmicBackground() {
@@ -654,7 +844,6 @@ function initCosmicBackground() {
   resizeCanvas();
   window.addEventListener("resize", resizeCanvas);
 
-  // Interaksi 3D Kamera & Kursor/Sentuhan untuk Komet
   const pointer = {
     x: width / 2,
     y: height / 2,
@@ -692,7 +881,6 @@ function initCosmicBackground() {
     { passive: true }
   );
 
-  // A. Cahaya Atmosfer / Soft Ambient Orbs Minimalis (Biar latar hidup, lembut, & tidak monoton)
   const ambientOrbs = [
     { xRatio: 0.16, yRatio: 0.2, radius: 220, rgb: "0, 102, 255", alpha: 0.048, speed: 0.006, phase: 0 },
     { xRatio: 0.84, yRatio: 0.36, radius: 240, rgb: "255, 90, 54", alpha: 0.042, speed: 0.005, phase: 2.1 },
@@ -700,7 +888,6 @@ function initCosmicBackground() {
     { xRatio: 0.78, yRatio: 0.82, radius: 190, rgb: "245, 158, 11", alpha: 0.04, speed: 0.006, phase: 1.3 }
   ];
 
-  // B. Cincin Orbit Kosmik (Celestial Rings) + Satelit Kecil Berputar Halus
   const celestialOrbits = [
     {
       xRatio: 0.82,
@@ -726,7 +913,6 @@ function initCosmicBackground() {
     }
   ];
 
-  // C. Elemen Geometri 3D Paper Minimalis Melayang (Prisma Berlian, Kubus Isometric, & Simbol Presisi +)
   const geoShapes = [
     { xRatio: 0.08, yRatio: 0.38, z: 0.85, type: "diamond", size: 11, rot: 0.2, rotSpeed: 0.006, rgb: "0, 102, 255" },
     { xRatio: 0.91, yRatio: 0.46, z: 0.75, type: "cube", size: 11, rot: 0.5, rotSpeed: -0.005, rgb: "10, 10, 10" },
@@ -736,11 +922,10 @@ function initCosmicBackground() {
     { xRatio: 0.72, yRatio: 0.68, z: 0.7, type: "cube", size: 9.5, rot: 0.1, rotSpeed: 0.005, rgb: "245, 158, 11" }
   ];
 
-  // D. Bintang & Sparkle Luar Angkasa 3D (✦ dan titik kosmik)
   const isMobileScreen = window.innerWidth <= 768;
   const starCount = isMobileScreen ? 34 : 52;
   const stars = Array.from({ length: starCount }, () => {
-    const z = Math.random() * 0.9 + 0.3; // Kedalaman 3D
+    const z = Math.random() * 0.9 + 0.3;
     return {
       x: Math.random() * width,
       y: Math.random() * height,
@@ -756,7 +941,6 @@ function initCosmicBackground() {
     };
   });
 
-  // E. Planet Cincin / Orbit 3D Minimalis
   const planets = [
     {
       xRatio: 0.12,
@@ -796,12 +980,10 @@ function initCosmicBackground() {
     }
   ];
 
-  // F. Komet 3D Orange & Merah (Responsif di Desktop & HP, Berlapis Kedalaman 3D Z, & Interaktif)
   const comets = [];
-  const sparks = []; // Percikan api 3D dari ekor & interaksi komet
+  const sparks = [];
   const targetCometCount = isMobileScreen ? 10 : 15;
 
-  // Palet warna api komet (Merah & Orange, tanpa biru)
   const cometPalettes = [
     { core: "255, 245, 235", head: "235, 38, 28", mid: "255, 92, 18", tail: "255, 160, 15" },
     { core: "255, 248, 240", head: "255, 68, 12", mid: "255, 118, 0", tail: "255, 180, 25" },
@@ -826,7 +1008,6 @@ function initCosmicBackground() {
   }
 
   function createComet(initialRandomScreen = false, customZ = null) {
-    // Kedalaman 3D Z: 0.35 (jauh di belakang) s/d 1.45 (dekat di depan kamera)
     const z = customZ !== null ? customZ : Math.random() * 1.1 + 0.35;
     const angle = (Math.PI / 180) * (136 + (Math.random() * 18 - 9));
     const baseSpeed = Math.random() * 2.2 + 2.1;
@@ -862,14 +1043,11 @@ function initCosmicBackground() {
     };
   }
 
-  // Langsung munculkan 16 komet 3D sejak awal halaman dibuka
   for (let i = 0; i < targetCometCount; i++) {
     comets.push(createComet(true));
   }
-  // Urutkan komet berdasarkan kedalaman 3D Z (yang jauh digambar lebih dulu)
   comets.sort((a, b) => a.z - b.z);
 
-  // Fungsi menggambar bintang 4-sudut (✦)
   function drawSparkle(x, y, size, colorStr) {
     ctx.save();
     ctx.translate(x, y);
@@ -890,19 +1068,16 @@ function initCosmicBackground() {
     ctx.restore();
   }
 
-  // Fungsi menggambar elemen Geometri 3D Paper Minimalis (Diamond 3D, Cube 3D, Cross +)
   function drawGeoShape(shape, x, y) {
     ctx.save();
     ctx.translate(x, y);
     ctx.rotate(shape.rot);
 
     const s = shape.size;
-    // Bayangan tipis ala Paper 3D
     ctx.strokeStyle = "rgba(10, 10, 10, 0.08)";
     ctx.lineWidth = 1.15;
 
     if (shape.type === "diamond") {
-      // Bayangan
       ctx.beginPath();
       ctx.moveTo(2.5, -s + 2.5);
       ctx.lineTo(s * 0.8 + 2.5, 2.5);
@@ -911,7 +1086,6 @@ function initCosmicBackground() {
       ctx.closePath();
       ctx.stroke();
 
-      // Garis Utama Prisma Berlian 3D
       ctx.beginPath();
       ctx.moveTo(0, -s);
       ctx.lineTo(s * 0.8, 0);
@@ -923,7 +1097,6 @@ function initCosmicBackground() {
       ctx.strokeStyle = `rgba(${shape.rgb}, 0.28)`;
       ctx.stroke();
 
-      // Garis rusuk tengah 3D
       ctx.beginPath();
       ctx.moveTo(0, -s);
       ctx.lineTo(0, s);
@@ -933,7 +1106,6 @@ function initCosmicBackground() {
       ctx.lineWidth = 0.8;
       ctx.stroke();
     } else if (shape.type === "cube") {
-      // Kubus Wireframe Minimalis 3D
       const half = s * 0.68;
       ctx.strokeStyle = `rgba(${shape.rgb}, 0.24)`;
       ctx.fillStyle = `rgba(${shape.rgb}, 0.05)`;
@@ -945,7 +1117,6 @@ function initCosmicBackground() {
       ctx.strokeStyle = "rgba(10, 10, 10, 0.16)";
       ctx.strokeRect(-half + 3.5, -half + 3.5, half * 1.6, half * 1.6);
     } else {
-      // Simbol Presisi Editorial (+)
       ctx.beginPath();
       ctx.moveTo(-s, 0);
       ctx.lineTo(s, 0);
@@ -966,11 +1137,9 @@ function initCosmicBackground() {
     ctx.clearRect(0, 0, width, height);
     frame++;
 
-    // Interpolasi pergerakan kamera 3D mengikuti mouse/sentuhan secara halus
     pointer.smoothX += (pointer.normX - pointer.smoothX) * 0.06;
     pointer.smoothY += (pointer.normY - pointer.smoothY) * 0.06;
 
-    // 0A. Gambar Cahaya Atmosfer / Soft Ambient Orbs (Sangat lembut agar latar tidak sepi/monoton)
     ambientOrbs.forEach((orb) => {
       const ox =
         orb.xRatio * width +
@@ -991,7 +1160,6 @@ function initCosmicBackground() {
       ctx.fill();
     });
 
-    // 0B. Gambar Cincin Orbit Kosmik (Celestial Rings) + Satelit Kecil
     celestialOrbits.forEach((orb) => {
       orb.satAngle += orb.satSpeed;
       const cx = orb.xRatio * width - pointer.smoothX * 15 * orb.z;
@@ -1006,7 +1174,6 @@ function initCosmicBackground() {
       ctx.translate(cx, cy);
       ctx.rotate(orb.tilt);
 
-      // Garis orbit putus-putus halus ala blueprint luar angkasa
       ctx.beginPath();
       ctx.setLineDash([5, 7]);
       ctx.ellipse(0, 0, orb.rx, orb.ry, 0, 0, Math.PI * 2);
@@ -1015,7 +1182,6 @@ function initCosmicBackground() {
       ctx.stroke();
       ctx.setLineDash([]);
 
-      // Titik satelit yang mengorbit di atas cincin
       const satX = Math.cos(orb.satAngle) * orb.rx;
       const satY = Math.sin(orb.satAngle) * orb.ry;
 
@@ -1027,7 +1193,6 @@ function initCosmicBackground() {
       ctx.restore();
     });
 
-    // 0C. Gambar Geometri 3D Paper Minimalis Melayang
     geoShapes.forEach((g) => {
       g.rot += g.rotSpeed;
       const gx =
@@ -1044,7 +1209,6 @@ function initCosmicBackground() {
       drawGeoShape(g, gx, gy);
     });
 
-    // 1. Gambar Planet Cincin 3D Minimalis
     planets.forEach((p) => {
       const parallaxX = -pointer.smoothX * 18 * p.z;
       const parallaxY = -pointer.smoothY * 18 * p.z;
@@ -1081,7 +1245,6 @@ function initCosmicBackground() {
       ctx.restore();
     });
 
-    // 2. Update & Gambar Bintang 3D + Garis Rasi Bintang
     const renderedStars = [];
 
     for (let i = 0; i < stars.length; i++) {
@@ -1121,7 +1284,6 @@ function initCosmicBackground() {
       }
     }
 
-    // Garis rasi bintang tipis
     for (let i = 0; i < renderedStars.length; i++) {
       for (let j = i + 1; j < renderedStars.length; j++) {
         const a = renderedStars[i];
@@ -1140,18 +1302,15 @@ function initCosmicBackground() {
       }
     }
 
-    // 3. Update & Gambar Komet 3D Interaktif (Warna Orange & Merah)
     for (let i = 0; i < comets.length; i++) {
       const c = comets[i];
 
-      // Pergeseran kamera 3D berdasarkan kedalaman Z komet
       const camShiftX = -pointer.smoothX * 34 * c.z;
       const camShiftY = -pointer.smoothY * 34 * c.z;
 
       const renderX = c.x + camShiftX;
       const renderY = c.y + camShiftY;
 
-      // Interaksi 3D saat kursor/sentuhan mendekati komet (efek belok & percikan api 3D)
       if (pointer.active) {
         const dx = renderX - pointer.x;
         const dy = renderY - pointer.y;
@@ -1169,14 +1328,12 @@ function initCosmicBackground() {
         }
       }
 
-      // Kembalikan kecepatan ke lintasan diagonal secara mulus (damping)
       c.vx += (c.baseVx - c.vx) * 0.04;
       c.vy += (c.baseVy - c.vy) * 0.04;
 
       c.x += c.vx;
       c.y += c.vy;
 
-      // Percikan partikel api otomatis pada komet 3D yang dekat
       if (c.z > 0.85 && Math.random() < 0.22) {
         spawnSpark(renderX, renderY, c.z * 0.85, c.palette, 0.8);
       }
@@ -1188,7 +1345,6 @@ function initCosmicBackground() {
       const tailX = renderX - normX * c.length;
       const tailY = renderY - normY * c.length;
 
-      // A. Bayangan 3D Paper di bawah komet (memberikan kesan melayang 3D di atas latar Off-White)
       if (c.z > 0.65) {
         const shadowOffset = c.z * 7;
         const shadowGrad = ctx.createLinearGradient(
@@ -1209,7 +1365,6 @@ function initCosmicBackground() {
         ctx.stroke();
       }
 
-      // B. Lapisan Luar Ekor Komet (Glow Orange-Merah Lebar)
       const outerGrad = ctx.createLinearGradient(renderX, renderY, tailX, tailY);
       outerGrad.addColorStop(0, `rgba(${c.palette.mid}, ${c.maxAlpha * 0.38})`);
       outerGrad.addColorStop(0.5, `rgba(${c.palette.tail}, ${c.maxAlpha * 0.16})`);
@@ -1223,7 +1378,6 @@ function initCosmicBackground() {
       ctx.lineCap = "round";
       ctx.stroke();
 
-      // C. Ekor Inti Komet (Merah Menyala -> Orange)
       const coreGrad = ctx.createLinearGradient(renderX, renderY, tailX, tailY);
       coreGrad.addColorStop(0, `rgba(${c.palette.head}, ${c.maxAlpha})`);
       coreGrad.addColorStop(0.4, `rgba(${c.palette.mid}, ${c.maxAlpha * 0.65})`);
@@ -1238,7 +1392,6 @@ function initCosmicBackground() {
       ctx.lineCap = "round";
       ctx.stroke();
 
-      // D. Halo 3D & Kepala Komet Berdimensi
       ctx.beginPath();
       ctx.arc(renderX, renderY, c.width * 3.5, 0, Math.PI * 2);
       ctx.fillStyle = `rgba(${c.palette.mid}, ${0.16 * Math.min(1, c.z)})`;
@@ -1249,19 +1402,16 @@ function initCosmicBackground() {
       ctx.fillStyle = `rgba(${c.palette.head}, 0.95)`;
       ctx.fill();
 
-      // Inti terang 3D di tengah kepala komet
       ctx.beginPath();
       ctx.arc(renderX - normX * 0.5, renderY - normY * 0.5, c.width * 0.65, 0, Math.PI * 2);
       ctx.fillStyle = `rgba(${c.palette.core}, 0.95)`;
       ctx.fill();
 
-      // Jika keluar layar kiri/bawah, daur ulang menjadi komet baru dengan kedalaman Z tetap
       if (c.x < -c.length - 100 || c.y > height + c.length + 100) {
         comets[i] = createComet(false, c.z);
       }
     }
 
-    // 4. Render Percikan Api 3D (Sparks) dari Komet
     for (let i = sparks.length - 1; i >= 0; i--) {
       const sp = sparks[i];
       sp.x += sp.vx;
@@ -1285,9 +1435,6 @@ function initCosmicBackground() {
   renderCosmic();
 }
 
-/* ==========================================================================
-   6. ANIMASI SCROLL 3D DUA ARAH + PROGRESS BAR + SMOOTH NAV SCROLL
-   ========================================================================== */
 let scrollObserver = null;
 
 function observeScrollItems() {
@@ -1300,17 +1447,16 @@ function observeScrollItems() {
           if (entry.isIntersecting) {
             entry.target.classList.add("is-inview");
           } else {
-            // Reset saat elemen keluar jauh dari viewport agar saat di-scroll balik tetap ada animasi halus
             const rect = entry.boundingClientRect;
-            if (rect.top > window.innerHeight * 0.92 || rect.bottom < -60) {
+            if (rect.top > window.innerHeight * 0.96 || rect.bottom < -80) {
               entry.target.classList.remove("is-inview");
             }
           }
         });
       },
       {
-        threshold: 0.1,
-        rootMargin: "0px 0px -45px 0px"
+        threshold: 0.06,
+        rootMargin: "0px 0px -15px 0px"
       }
     );
   }
@@ -1340,7 +1486,6 @@ function initScrollLoop() {
   updateScroll();
 }
 
-// Smooth Eased Scroll saat klik menu navigasi
 function initSmoothAnchorScroll() {
   const anchorLinks = document.querySelectorAll('a[href^="#"]');
 
@@ -1359,18 +1504,18 @@ function initSmoothAnchorScroll() {
       const targetY =
         targetEl.getBoundingClientRect().top + window.scrollY - headerOffset;
       const distance = targetY - startY;
-      const duration = 750;
+      const duration = 480;
       let startTime = null;
 
-      function easeInOutCubic(t) {
-        return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+      function easeOutQuart(t) {
+        return 1 - Math.pow(1 - t, 4);
       }
 
       function step(timestamp) {
         if (!startTime) startTime = timestamp;
         const elapsed = timestamp - startTime;
         const progress = Math.min(elapsed / duration, 1);
-        const eased = easeInOutCubic(progress);
+        const eased = easeOutQuart(progress);
 
         window.scrollTo(0, startY + distance * eased);
 
@@ -1384,26 +1529,36 @@ function initSmoothAnchorScroll() {
   });
 }
 
-/* ==========================================================================
-   7. NAVBAR AKTIF, MENU MOBILE, & FITUR SALIN USERNAME DISCORD
-   ========================================================================== */
 const mobileMenuBtn = document.getElementById("mobileMenuBtn");
 const navLinksContainer = document.getElementById("navLinks");
 const navLinks = document.querySelectorAll(".nav-link");
 
 if (mobileMenuBtn && navLinksContainer) {
-  mobileMenuBtn.addEventListener("click", () => {
-    navLinksContainer.classList.toggle("open");
+  mobileMenuBtn.addEventListener("click", (e) => {
+    e.stopPropagation();
+    const isOpen = navLinksContainer.classList.toggle("open");
+    mobileMenuBtn.classList.toggle("active", isOpen);
   });
 
   navLinks.forEach((link) => {
     link.addEventListener("click", () => {
       navLinksContainer.classList.remove("open");
+      mobileMenuBtn.classList.remove("active");
     });
+  });
+
+  document.addEventListener("click", (e) => {
+    if (
+      navLinksContainer.classList.contains("open") &&
+      !navLinksContainer.contains(e.target) &&
+      !mobileMenuBtn.contains(e.target)
+    ) {
+      navLinksContainer.classList.remove("open");
+      mobileMenuBtn.classList.remove("active");
+    }
   });
 }
 
-// Highlight menu aktif saat halaman di-scroll
 const sections = document.querySelectorAll("section[id]");
 window.addEventListener(
   "scroll",
@@ -1428,13 +1583,12 @@ window.addEventListener(
   { passive: true }
 );
 
-// Tombol Copy Username Discord
 const copyDiscordBtn = document.getElementById("copyDiscordBtn");
 const copyDiscordText = document.getElementById("copyDiscordText");
 
 if (copyDiscordBtn && copyDiscordText) {
   copyDiscordBtn.addEventListener("click", () => {
-    const username = copyDiscordBtn.getAttribute("data-copy") || "fenqo#0001";
+    const username = copyDiscordBtn.getAttribute("data-copy") || "penkoo18";
     navigator.clipboard.writeText(username).then(() => {
       const originalText = copyDiscordText.textContent;
       copyDiscordText.textContent = `Tersalin: ${username} ✓`;
@@ -1445,13 +1599,11 @@ if (copyDiscordBtn && copyDiscordText) {
   });
 }
 
-// Tahun otomatis di footer
 const yearNow = document.getElementById("yearNow");
 if (yearNow) {
   yearNow.textContent = new Date().getFullYear();
 }
 
-// Jalankan semua fitur
 initProfilePhotoFallback();
 renderSkills();
 renderProjects("all");

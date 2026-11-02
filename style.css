@@ -1,15 +1,8 @@
-/* ==========================================================================
-   PORTFOLIO FENQO RABBIL BRILIANT
-   Style: Minimalist 3D Paper + Interactive 3D Cosmic Background
-   Palet Warna UI: Off-White (#FAFAF7), Putih (#FFFFFF), Hitam (#0A0A0A), Biru (#0066FF)
-   ========================================================================== */
-
 :root {
   --bg-offwhite: #FAFAF7;
   --white: #FFFFFF;
   --black: #0A0A0A;
 
-  /* Palet Warna Editorial Minimalis (Berwarna Kalem, Elegan, Tanpa Ungu) */
   --blue: #0066FF;
   --blue-soft: #EEF4FF;
 
@@ -31,10 +24,10 @@
   --teal-soft: #F0FDFA;
 
   --red: #E11D48;
+  --red-text: #9F1239;
   --red-flag: #E61E2A;
   --red-soft: #FFF1F2;
 
-  /* Turunan opasitas */
   --black-04: rgba(10, 10, 10, 0.04);
   --black-08: rgba(10, 10, 10, 0.08);
   --black-15: rgba(10, 10, 10, 0.15);
@@ -42,10 +35,7 @@
   --blue-08: rgba(0, 102, 255, 0.08);
   --blue-18: rgba(0, 102, 255, 0.18);
 
-  /* Font bergaya iOS (SF Pro Display / SF Pro Text / Inter) */
   --font-ios: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Inter", "Helvetica Neue", Arial, sans-serif;
-
-  /* Kurva animasi super smooth ala iOS */
   --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
   --ease-smooth: cubic-bezier(0.22, 1, 0.36, 1);
 }
@@ -66,7 +56,6 @@ html {
 }
 
 body {
-  /* Transparan agar latar Off-White #FAFAF7 + Komet 3D terlihat di seluruh halaman */
   background-color: transparent;
   color: var(--black);
   font-family: var(--font-ios);
@@ -76,7 +65,6 @@ body {
   position: relative;
 }
 
-/* Scroll Progress Bar di Paling Atas Layar */
 .scroll-progress-track {
   position: fixed;
   top: 0;
@@ -96,7 +84,6 @@ body {
   transition: width 0.08s linear;
 }
 
-/* Background Grid Paper Minimalis & Canvas Cosmic 3D (Di Belakang Semua Konten) */
 .bg-grid {
   position: fixed;
   inset: 0;
@@ -140,23 +127,20 @@ ul {
   list-style: none;
 }
 
-/* ==========================================================================
-   ANIMASI SCROLL 3D SUPER SMOOTH (MUNCUL SAAT SCROLL TURUN & NAIK)
-   ========================================================================== */
 [data-scroll-item] {
   opacity: 0;
-  transform: perspective(1000px) translate3d(0, 44px, -24px) rotateX(7deg) scale(0.96);
-  filter: blur(2.5px);
+  transform: perspective(1000px) translate3d(0, 22px, -12px) rotateX(3.5deg) scale(0.985);
+  filter: blur(1px);
   transition:
-    opacity 0.85s var(--ease-out-expo),
-    transform 0.95s var(--ease-out-expo),
-    filter 0.75s var(--ease-out-expo);
-  transition-delay: var(--delay, 0ms);
+    opacity 0.46s var(--ease-out-expo),
+    transform 0.52s var(--ease-out-expo),
+    filter 0.38s var(--ease-out-expo);
+  transition-delay: calc(var(--delay, 0ms) * 0.45);
   will-change: opacity, transform, filter;
 }
 
 [data-scroll-item="scale"] {
-  transform: perspective(1000px) translate3d(0, 36px, -30px) scale(0.93);
+  transform: perspective(1000px) translate3d(0, 18px, -16px) scale(0.965);
 }
 
 [data-scroll-item].is-inview {
@@ -165,49 +149,47 @@ ul {
   filter: blur(0px);
 }
 
-/* ==========================================================================
-   NAVBAR PAPER MINIMALIS
-   ========================================================================== */
 .navbar-wrapper {
   position: sticky;
-  top: 18px;
+  top: 16px;
   z-index: 100;
   padding: 0 24px;
 }
 
 .navbar {
+  position: relative;
   max-width: 1140px;
   margin: 0 auto;
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.92);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border: 1.5px solid var(--black);
-  border-radius: 16px;
-  padding: 12px 22px;
+  border-radius: 14px;
+  padding: 9px 18px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  box-shadow: 3.5px 3.5px 0px var(--black);
+  box-shadow: 3px 3px 0px var(--black);
   transition: box-shadow 0.3s var(--ease-smooth), transform 0.3s var(--ease-smooth);
 }
 
 .brand {
   display: flex;
   align-items: center;
-  gap: 9px;
-  font-size: 1.2rem;
+  gap: 8px;
+  font-size: 1.1rem;
   font-weight: 700;
   letter-spacing: -0.03em;
   color: var(--black);
 }
 
 .brand-cube {
-  width: 15px;
-  height: 15px;
+  width: 13px;
+  height: 13px;
   background: var(--blue);
   border: 1.5px solid var(--black);
-  border-radius: 4px;
-  box-shadow: 2px 2px 0px var(--black);
+  border-radius: 3.5px;
+  box-shadow: 1.5px 1.5px 0px var(--black);
   display: inline-block;
   transition: transform 0.35s var(--ease-smooth);
 }
@@ -223,18 +205,21 @@ ul {
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 4px;
 }
 
 .nav-link {
-  padding: 8px 16px;
-  border-radius: 10px;
-  font-size: 0.9rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 14px;
+  border-radius: 9px;
+  font-size: 0.85rem;
   font-weight: 600;
   letter-spacing: -0.01em;
   color: var(--black);
-  border: 1.5px solid transparent;
-  transition: all 0.25s var(--ease-smooth);
+  border: 1.25px solid transparent;
+  transition: all 0.22s var(--ease-smooth);
 }
 
 .nav-link:hover {
@@ -244,27 +229,27 @@ ul {
 .nav-link.active {
   background: var(--blue);
   color: var(--white);
-  border: 1.5px solid var(--black);
-  box-shadow: 2px 2px 0px var(--black);
+  border: 1.25px solid var(--black);
+  box-shadow: 1.5px 1.5px 0px var(--black);
 }
 
 .nav-cta {
   background: var(--black);
   color: var(--white);
-  padding: 9px 18px;
-  border-radius: 10px;
-  font-size: 0.88rem;
+  padding: 7px 15px;
+  border-radius: 9px;
+  font-size: 0.84rem;
   font-weight: 600;
   letter-spacing: -0.01em;
   border: 1.5px solid var(--black);
-  box-shadow: 2.5px 2.5px 0px var(--blue);
-  transition: all 0.25s var(--ease-smooth);
+  box-shadow: 2px 2px 0px var(--blue);
+  transition: all 0.22s var(--ease-smooth);
 }
 
 .nav-cta:hover {
   background: var(--blue);
   color: var(--white);
-  box-shadow: 3px 3px 0px var(--black);
+  box-shadow: 2.5px 2.5px 0px var(--black);
   transform: translate(-1px, -1px);
 }
 
@@ -272,28 +257,39 @@ ul {
   display: none;
   background: var(--white);
   border: 1.5px solid var(--black);
-  border-radius: 10px;
-  width: 40px;
-  height: 40px;
+  border-radius: 9px;
+  width: 34px;
+  height: 34px;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 5px;
+  gap: 4px;
   cursor: pointer;
-  box-shadow: 2.5px 2.5px 0px var(--black);
+  box-shadow: 2px 2px 0px var(--black);
+  transition: background 0.2s var(--ease-smooth), transform 0.2s var(--ease-smooth), box-shadow 0.2s var(--ease-smooth);
+}
+
+.mobile-menu-btn:active {
+  transform: translate(1px, 1px);
+  box-shadow: 1px 1px 0px var(--black);
 }
 
 .mobile-menu-btn span {
-  width: 18px;
-  height: 2px;
+  width: 15px;
+  height: 1.8px;
   background: var(--black);
   border-radius: 2px;
-  transition: 0.25s var(--ease-smooth);
+  transition: transform 0.25s var(--ease-smooth), opacity 0.25s var(--ease-smooth);
 }
 
-/* ==========================================================================
-   HERO SECTION (HALAMAN AWAL - RAPI & MINIMALIS)
-   ========================================================================== */
+.mobile-menu-btn.active span:first-child {
+  transform: translateY(2.9px) rotate(45deg);
+}
+
+.mobile-menu-btn.active span:last-child {
+  transform: translateY(-2.9px) rotate(-45deg);
+}
+
 .hero-section {
   padding: 68px 0 88px;
   background: transparent;
@@ -329,7 +325,6 @@ ul {
   border-radius: 50%;
 }
 
-/* TULISAN 3D PAPER STATIS: FENQO RABBIL (KE SAMPING) & BRILIANT DI BAWAHNYA */
 .title-3d-stage {
   margin-bottom: 22px;
 }
@@ -381,7 +376,6 @@ ul {
   font-weight: 600;
 }
 
-/* TAG KEAHLIAN PAPER MINIMALIS DENGAN AKSEN WARNA KALEM */
 .skill-tags {
   display: flex;
   flex-wrap: wrap;
@@ -390,6 +384,8 @@ ul {
 }
 
 .tag-3d {
+  --tag-color: var(--blue);
+  --tag-bg: var(--blue-soft);
   display: inline-flex;
   align-items: center;
   gap: 7px;
@@ -409,39 +405,115 @@ ul {
   height: 7px;
   border-radius: 50%;
   border: 1px solid var(--black);
-  background: var(--blue);
+  background: var(--tag-color);
 }
 
-.tag-blue .tag-dot { background: var(--blue); }
-.tag-coral .tag-dot { background: var(--coral); }
-.tag-emerald .tag-dot { background: var(--emerald); }
-.tag-amber .tag-dot { background: var(--amber); }
-
-.tag-blue:hover {
-  background: var(--blue-soft);
+.tag-3d:hover {
+  background: var(--tag-bg);
   transform: translate(-1px, -1px);
-  box-shadow: 3.5px 3.5px 0px var(--blue);
+  box-shadow: 3.5px 3.5px 0px var(--tag-color);
 }
 
-.tag-coral:hover {
-  background: var(--coral-soft);
-  transform: translate(-1px, -1px);
-  box-shadow: 3.5px 3.5px 0px var(--coral);
+.tag-blue, .tag-biru {
+  --tag-color: #0066FF;
+  --tag-bg: #EEF4FF;
 }
 
-.tag-emerald:hover {
-  background: var(--emerald-soft);
-  transform: translate(-1px, -1px);
-  box-shadow: 3.5px 3.5px 0px var(--emerald);
+.tag-sky {
+  --tag-color: #0284C7;
+  --tag-bg: #E0F2FE;
 }
 
-.tag-amber:hover {
-  background: var(--amber-soft);
-  transform: translate(-1px, -1px);
-  box-shadow: 3.5px 3.5px 0px var(--amber);
+.tag-cyan {
+  --tag-color: #0891B2;
+  --tag-bg: #ECFEFF;
 }
 
-/* TOMBOL PAPER 3D MINIMALIS */
+.tag-navy {
+  --tag-color: #1E3A8A;
+  --tag-bg: #DBEAFE;
+}
+
+.tag-coral, .tag-orange, .tag-oren {
+  --tag-color: #FF5A36;
+  --tag-bg: #FFF1EE;
+}
+
+.tag-peach {
+  --tag-color: #FB7185;
+  --tag-bg: #FFF1F2;
+}
+
+.tag-emerald, .tag-green, .tag-hijau {
+  --tag-color: #10B981;
+  --tag-bg: #ECFDF5;
+}
+
+.tag-mint {
+  --tag-color: #34D399;
+  --tag-bg: #ECFDF5;
+}
+
+.tag-lime {
+  --tag-color: #65A30D;
+  --tag-bg: #F7FEE7;
+}
+
+.tag-olive {
+  --tag-color: #4D7C0F;
+  --tag-bg: #ECFCCB;
+}
+
+.tag-teal, .tag-tosca {
+  --tag-color: #0D9488;
+  --tag-bg: #F0FDFA;
+}
+
+.tag-amber {
+  --tag-color: #F59E0B;
+  --tag-bg: #FFFBEB;
+}
+
+.tag-yellow, .tag-kuning {
+  --tag-color: #EAB308;
+  --tag-bg: #FEFCE8;
+}
+
+.tag-gold, .tag-emas {
+  --tag-color: #CA8A04;
+  --tag-bg: #FEF9C3;
+}
+
+.tag-cream, .tag-sand, .tag-krem {
+  --tag-color: #B45309;
+  --tag-bg: #FEF3C7;
+}
+
+.tag-brown, .tag-coffee, .tag-coklat {
+  --tag-color: #78350F;
+  --tag-bg: #FDE68A;
+}
+
+.tag-red, .tag-crimson, .tag-merah {
+  --tag-color: #E11D48;
+  --tag-bg: #FFF1F2;
+}
+
+.tag-rose, .tag-pink {
+  --tag-color: #F43F5E;
+  --tag-bg: #FFE4E6;
+}
+
+.tag-slate, .tag-gray, .tag-grey, .tag-abu {
+  --tag-color: #475569;
+  --tag-bg: #F1F5F9;
+}
+
+.tag-black, .tag-dark, .tag-hitam {
+  --tag-color: #0A0A0A;
+  --tag-bg: #E5E5E5;
+}
+
 .hero-actions {
   display: flex;
   flex-wrap: wrap;
@@ -532,7 +604,6 @@ ul {
   width: 100%;
 }
 
-/* STATISTIK SINGKAT PAPER 3D DENGAN VARIASI AKSEN WARNA */
 .hero-stats {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -586,9 +657,6 @@ ul {
   color: var(--black-65);
 }
 
-/* ==========================================================================
-   FOTO PROFILE 3D DENGAN INTERAKSI MINIMALIS SAAT DISENTUH / HOVER
-   ========================================================================== */
 .hero-visual {
   display: flex;
   justify-content: center;
@@ -616,7 +684,6 @@ ul {
   will-change: transform;
 }
 
-/* Lapisan Kertas 3D Belakang (Kedalaman Z Negatif) */
 .photo-layer-back-blue {
   position: absolute;
   inset: 0;
@@ -636,7 +703,6 @@ ul {
   transition: transform 0.2s ease-out;
 }
 
-/* Kartu Foto Utama (Z = 0) */
 .photo-frame-main {
   position: relative;
   background: var(--white);
@@ -725,21 +791,34 @@ ul {
 }
 
 .verified-badge {
-  width: 30px;
-  height: 30px;
-  border-radius: 8px;
-  background: var(--blue);
-  color: var(--white);
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: var(--white);
   border: 1.5px solid var(--black);
+  padding: 1.5px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 0.88rem;
-  font-weight: 700;
+  flex-shrink: 0;
+  overflow: hidden;
   box-shadow: 2px 2px 0px var(--black);
+  transition: transform 0.25s var(--ease-smooth), box-shadow 0.25s var(--ease-smooth);
 }
 
-/* Badge Kertas 3D Melayang di Depan Foto (Kedalaman Z Positif) */
+.photo-3d-stage:hover .verified-badge {
+  transform: scale(1.05);
+  box-shadow: 2.5px 2.5px 0px var(--blue);
+}
+
+.school-logo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 50%;
+  display: block;
+}
+
 .floating-badge-3d {
   position: absolute;
   background: var(--white);
@@ -759,11 +838,11 @@ ul {
   transition: transform 0.2s ease-out;
 }
 
-/* Badge INDONESIA — Desain Merah Putih Minimalis & Profesional */
 .badge-indonesia {
-  bottom: 62px;
-  left: -16px;
-  background: var(--white);
+  bottom: 82px;
+  left: -14px;
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(6px);
   color: var(--black);
   border: 1.5px solid var(--black);
   border-radius: 999px;
@@ -809,9 +888,6 @@ ul {
   color: var(--black);
 }
 
-/* ==========================================================================
-   SECTION HEADER UMUM
-   ========================================================================== */
 .section-header {
   margin-bottom: 36px;
 }
@@ -851,9 +927,6 @@ ul {
   max-width: 580px;
 }
 
-/* ==========================================================================
-   SKILL SECTION (MENU SKILL — MINIMALIS, TANPA FOTO, SERASI 3D PAPER)
-   ========================================================================== */
 .skill-section {
   padding: 84px 0;
   border-top: 1.5px solid var(--black);
@@ -878,16 +951,15 @@ ul {
   box-shadow: 4px 4px 0px var(--black);
   transform-style: preserve-3d;
   transition:
-    opacity 0.85s var(--ease-out-expo),
-    filter 0.75s var(--ease-out-expo),
-    box-shadow 0.3s var(--ease-smooth),
-    border-color 0.3s var(--ease-smooth);
+    opacity 0.46s var(--ease-out-expo),
+    filter 0.38s var(--ease-out-expo),
+    box-shadow 0.22s var(--ease-smooth),
+    border-color 0.22s var(--ease-smooth);
   display: flex;
   flex-direction: column;
   will-change: transform, opacity;
 }
 
-/* 4 Tema Warna Kalem Tanpa Ungu untuk 4 Kartu Skill */
 .skill-card-3d.theme-s1 {
   --skill-accent: var(--blue);
   --skill-soft: var(--blue-soft);
@@ -916,39 +988,66 @@ ul {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 13px 22px;
+  gap: 10px;
+  padding: 12px 20px;
   background: var(--skill-soft);
   border-bottom: 1.5px solid var(--black);
 }
 
 .skill-badge-num {
-  font-size: 0.72rem;
+  font-size: 0.7rem;
   font-weight: 700;
   letter-spacing: 0.06em;
   background: var(--black);
   color: var(--white);
-  padding: 3px 10px;
+  padding: 3.5px 10px;
   border-radius: 6px;
 }
 
 .skill-level-pill {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: 7px;
   font-size: 0.72rem;
   font-weight: 600;
   color: var(--black);
   background: var(--white);
   border: 1.25px solid var(--black);
   border-radius: 999px;
-  padding: 3px 11px;
+  padding: 3.5px 11px;
   box-shadow: 1.5px 1.5px 0px var(--black);
 }
 
 .skill-level-dot {
-  width: 7px;
-  height: 7px;
+  width: 6.5px;
+  height: 6.5px;
   border-radius: 50%;
+  background: var(--skill-accent);
+}
+
+.skill-signal-bars {
+  display: inline-flex;
+  align-items: flex-end;
+  gap: 2.5px;
+  height: 11px;
+  margin-left: 2px;
+  padding-left: 6px;
+  border-left: 1px solid var(--black-15);
+}
+
+.signal-bar {
+  width: 3px;
+  border-radius: 2px;
+  background: var(--black-15);
+  transition: background 0.25s var(--ease-smooth);
+}
+
+.signal-bar:nth-child(1) { height: 4px; }
+.signal-bar:nth-child(2) { height: 6.5px; }
+.signal-bar:nth-child(3) { height: 9px; }
+.signal-bar:nth-child(4) { height: 11px; }
+
+.signal-bar.is-active {
   background: var(--skill-accent);
 }
 
@@ -959,21 +1058,76 @@ ul {
   flex: 1;
 }
 
+.skill-head-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  margin-bottom: 14px;
+  position: relative;
+}
+
+.skill-icon-box {
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  background: var(--skill-soft);
+  color: var(--skill-accent);
+  border: 1.5px solid var(--black);
+  box-shadow: 2.5px 2.5px 0px var(--black);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: transform 0.25s var(--ease-smooth), box-shadow 0.25s var(--ease-smooth), background 0.25s var(--ease-smooth), color 0.25s var(--ease-smooth);
+}
+
+.skill-card-3d:hover .skill-icon-box {
+  background: var(--skill-accent);
+  color: var(--white);
+  transform: translate(-1px, -1px);
+  box-shadow: 3px 3px 0px var(--black);
+}
+
+.skill-head-text {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+}
+
+.skill-watermark {
+  font-size: 1.65rem;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  color: transparent;
+  -webkit-text-stroke: 1.25px var(--black-15);
+  user-select: none;
+  flex-shrink: 0;
+  margin-top: 2px;
+  transition: -webkit-text-stroke-color 0.25s var(--ease-smooth), transform 0.25s var(--ease-smooth);
+}
+
+.skill-card-3d:hover .skill-watermark {
+  -webkit-text-stroke-color: var(--skill-accent);
+  transform: translateY(-1px);
+}
+
 .skill-subtitle {
-  font-size: 0.73rem;
+  font-size: 0.72rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.06em;
   color: var(--skill-accent);
-  margin-bottom: 4px;
+  margin-bottom: 3px;
 }
 
 .skill-title {
-  font-size: 1.3rem;
+  font-size: 1.26rem;
   font-weight: 700;
   letter-spacing: -0.02em;
+  line-height: 1.2;
   color: var(--black);
-  margin-bottom: 8px;
 }
 
 .skill-desc {
@@ -981,45 +1135,77 @@ ul {
   font-weight: 400;
   color: var(--black-65);
   margin-bottom: 18px;
+  line-height: 1.6;
   flex: 1;
+}
+
+.skill-stack-panel {
+  background: var(--bg-offwhite);
+  border: 1.5px solid var(--black);
+  border-radius: 13px;
+  padding: 13px 14px;
+  box-shadow: 2.5px 2.5px 0px var(--black-08);
+}
+
+.skill-stack-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  padding-bottom: 8px;
+  border-bottom: 1px dashed var(--black-15);
+}
+
+.skill-stack-label {
+  font-size: 0.67rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--black-65);
+}
+
+.skill-stack-count {
+  font-size: 0.67rem;
+  font-weight: 700;
+  color: var(--skill-accent);
+  background: var(--white);
+  border: 1px solid var(--black);
+  border-radius: 6px;
+  padding: 1px 7px;
 }
 
 .skill-items {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: 7px;
 }
 
 .skill-item-pill {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  font-size: 0.76rem;
+  font-size: 0.75rem;
   font-weight: 600;
-  padding: 5px 11px;
+  padding: 4.5px 10px;
   border-radius: 8px;
-  background: var(--bg-offwhite);
+  background: var(--white);
   border: 1.25px solid var(--black);
   color: var(--black);
-  box-shadow: 2px 2px 0px var(--black);
+  box-shadow: 1.5px 1.5px 0px var(--black);
   transition: transform 0.2s var(--ease-smooth), box-shadow 0.2s var(--ease-smooth), background 0.2s var(--ease-smooth);
 }
 
 .skill-item-pill:hover {
   background: var(--skill-soft);
   transform: translate(-1px, -1px);
-  box-shadow: 3px 3px 0px var(--skill-accent);
+  box-shadow: 2.5px 2.5px 0px var(--skill-accent);
 }
 
 .skill-item-check {
   color: var(--skill-accent);
   font-weight: 700;
-  font-size: 0.75rem;
+  font-size: 0.74rem;
 }
 
-/* ==========================================================================
-   PROJECT SECTION (MENU PROJECT - PAPER STYLE RAPI & BERWARNA KALEM)
-   ========================================================================== */
 .project-section {
   padding: 84px 0;
   border-top: 1.5px solid var(--black);
@@ -1064,7 +1250,6 @@ ul {
   gap: 26px;
 }
 
-/* KARTU PROJECT PAPER 3D DENGAN VARIASI TEMA WARNA PER KATEGORI */
 .project-card-3d {
   --card-accent: var(--blue);
   --card-soft: var(--blue-soft);
@@ -1077,16 +1262,15 @@ ul {
   box-shadow: 4px 4px 0px var(--black);
   transform-style: preserve-3d;
   transition:
-    opacity 0.85s var(--ease-out-expo),
-    filter 0.75s var(--ease-out-expo),
-    box-shadow 0.3s var(--ease-smooth),
-    border-color 0.3s var(--ease-smooth);
+    opacity 0.46s var(--ease-out-expo),
+    filter 0.38s var(--ease-out-expo),
+    box-shadow 0.22s var(--ease-smooth),
+    border-color 0.22s var(--ease-smooth);
   display: flex;
   flex-direction: column;
   will-change: transform, opacity;
 }
 
-/* 1 WARNA = 1 PROJECT (6 Warna Berbeda, Kalem, Minimalis & Tanpa Ungu) */
 .project-card-3d.theme-p1 {
   --card-accent: var(--blue);
   --card-soft: var(--blue-soft);
@@ -1241,7 +1425,6 @@ ul {
   border: 1px solid var(--black-15);
 }
 
-/* BADGE STATUS PROJECT (HIJAU MINT UNTUK SELESAI & AMBER UNTUK DALAM PROSES) */
 .project-status-badge {
   display: inline-flex;
   align-items: center;
@@ -1282,6 +1465,24 @@ ul {
   background: var(--amber);
   display: inline-block;
   animation: pulseDot 1.8s infinite ease-in-out;
+}
+
+.project-status-badge.status-stalled {
+  background: var(--red-soft);
+  color: var(--red-text);
+  border-color: var(--black);
+}
+
+.project-status-badge.status-stalled .status-stalled-icon {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--red);
+  color: var(--white);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
 }
 
 @keyframes pulseDot {
@@ -1353,14 +1554,11 @@ ul {
   transform: translate(-1px, -1px);
 }
 
-/* ==========================================================================
-   MODAL POPUP DETAIL PROJECT (FOTO PROJECT MINIMALIS & SERASI)
-   ========================================================================== */
 .project-modal-backdrop {
   position: fixed;
   inset: 0;
   z-index: 300;
-  background: rgba(10, 10, 10, 0.45);
+  background: rgba(10, 10, 10, 0.48);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   display: flex;
@@ -1369,7 +1567,7 @@ ul {
   padding: 20px;
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.3s var(--ease-smooth);
+  transition: opacity 0.28s var(--ease-smooth);
 }
 
 .project-modal-backdrop.is-open {
@@ -1379,8 +1577,8 @@ ul {
 
 .project-modal-card {
   width: 100%;
-  max-width: 720px;
-  max-height: 90vh;
+  max-width: 740px;
+  max-height: 92vh;
   background: var(--white);
   border: 1.5px solid var(--black);
   border-radius: 20px;
@@ -1388,8 +1586,8 @@ ul {
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  transform: translateY(20px) scale(0.96);
-  transition: transform 0.35s var(--ease-out-expo);
+  transform: translateY(18px) scale(0.96);
+  transition: transform 0.32s var(--ease-out-expo);
 }
 
 .project-modal-backdrop.is-open .project-modal-card {
@@ -1421,13 +1619,13 @@ ul {
 }
 
 .modal-close-btn {
-  width: 30px;
-  height: 30px;
+  width: 32px;
+  height: 32px;
   border-radius: 8px;
   background: var(--white);
   color: var(--black);
   border: 1.5px solid var(--black);
-  font-size: 0.85rem;
+  font-size: 0.88rem;
   font-weight: 700;
   cursor: pointer;
   display: flex;
@@ -1444,6 +1642,7 @@ ul {
 .modal-body {
   padding: 22px;
   overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 .modal-photo-frame {
@@ -1457,14 +1656,17 @@ ul {
   display: flex;
   align-items: center;
   justify-content: center;
-  max-height: 410px;
+  min-height: 240px;
+  max-height: 460px;
+  padding: 8px;
 }
 
 .modal-project-img {
   width: 100%;
-  max-height: 410px;
+  max-height: 440px;
   object-fit: contain;
   display: block;
+  border-radius: 8px;
   filter: none !important;
   mix-blend-mode: normal !important;
 }
@@ -1482,9 +1684,9 @@ ul {
 }
 
 .modal-thumb-btn {
-  width: 68px;
-  height: 48px;
-  border-radius: 8px;
+  width: 72px;
+  height: 52px;
+  border-radius: 9px;
   border: 1.5px solid var(--black);
   background: var(--bg-offwhite);
   overflow: hidden;
@@ -1533,7 +1735,7 @@ ul {
 }
 
 .modal-desc {
-  font-size: 0.95rem;
+  font-size: 0.96rem;
   font-weight: 400;
   color: var(--black-65);
   margin-bottom: 18px;
@@ -1553,9 +1755,6 @@ ul {
   border-top: 1px solid var(--black-15);
 }
 
-/* ==========================================================================
-   CONTACT SECTION (INSTAGRAM, DISCORD, WHATSAPP)
-   ========================================================================== */
 .contact-section {
   padding: 84px 0 96px;
   border-top: 1.5px solid var(--black);
@@ -1586,9 +1785,9 @@ ul {
   box-shadow: 4px 4px 0px var(--black);
   transform-style: preserve-3d;
   transition:
-    opacity 0.85s var(--ease-out-expo),
-    filter 0.75s var(--ease-out-expo),
-    box-shadow 0.3s var(--ease-smooth);
+    opacity 0.46s var(--ease-out-expo),
+    filter 0.38s var(--ease-out-expo),
+    box-shadow 0.22s var(--ease-smooth);
   will-change: transform, opacity;
 }
 
@@ -1683,9 +1882,6 @@ ul {
   flex: 1;
 }
 
-/* ==========================================================================
-   FOOTER
-   ========================================================================== */
 .footer {
   border-top: 1.5px solid var(--black);
   background: var(--black);
@@ -1716,26 +1912,36 @@ ul {
   color: rgba(255, 255, 255, 0.8);
 }
 
-/* ==========================================================================
-   RESPONSIVE DESIGN (MOBILE, TABLET, & BERBAGAI UKURAN LAYAR)
-   ========================================================================== */
 @media (max-width: 992px) {
   .hero-section {
-    padding: 46px 0 68px;
+    padding: 42px 0 64px;
   }
 
   .hero-grid {
     grid-template-columns: 1fr;
-    gap: 40px;
+    gap: 38px;
   }
 
   .hero-visual {
     order: -1;
-    padding: 6px 14px 10px 6px;
+    padding: 8px 16px 14px 8px;
   }
 
   .photo-3d-stage {
-    max-width: 340px;
+    max-width: 335px;
+  }
+
+  .photo-layer-back-blue {
+    transform: translate3d(calc(13px + var(--layer-x) * 1.1), calc(13px + var(--layer-y) * 1.1), -28px);
+  }
+
+  .photo-layer-back-black {
+    transform: translate3d(calc(6.5px + var(--layer-x) * 0.6), calc(6.5px + var(--layer-y) * 0.6), -14px);
+  }
+
+  .badge-indonesia {
+    bottom: 76px;
+    left: -10px;
   }
 
   .contact-grid {
@@ -1749,13 +1955,25 @@ ul {
   }
 
   .navbar-wrapper {
-    top: 12px;
+    top: 10px;
     padding: 0 14px;
   }
 
   .navbar {
-    padding: 10px 16px;
-    border-radius: 14px;
+    padding: 8px 14px;
+    border-radius: 12px;
+    box-shadow: 2.5px 2.5px 0px var(--black);
+  }
+
+  .brand {
+    font-size: 1.02rem;
+    gap: 7px;
+  }
+
+  .brand-cube {
+    width: 12px;
+    height: 12px;
+    box-shadow: 1.5px 1.5px 0px var(--black);
   }
 
   .nav-cta {
@@ -1768,30 +1986,59 @@ ul {
 
   .nav-links {
     position: absolute;
-    top: calc(100% + 10px);
-    left: 14px;
-    right: 14px;
-    background: var(--white);
+    top: calc(100% + 8px);
+    right: 0;
+    left: auto;
+    width: 158px;
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     border: 1.5px solid var(--black);
-    border-radius: 14px;
-    padding: 14px;
+    border-radius: 12px;
+    padding: 6px;
     flex-direction: column;
     align-items: stretch;
-    box-shadow: 4px 4px 0px var(--black);
-    display: none;
+    gap: 3px;
+    box-shadow: 3px 3px 0px var(--black);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateY(-6px) scale(0.96);
+    transform-origin: top right;
+    transition:
+      opacity 0.2s var(--ease-out-expo),
+      transform 0.22s var(--ease-out-expo),
+      visibility 0.2s;
   }
 
   .nav-links.open {
-    display: flex;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateY(0) scale(1);
+  }
+
+  .nav-links li {
+    width: 100%;
   }
 
   .nav-link {
-    text-align: center;
-    padding: 10px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    text-align: left;
+    padding: 7px 11px;
+    font-size: 0.82rem;
+    border-radius: 8px;
+  }
+
+  .nav-link.active {
+    box-shadow: 1.5px 1.5px 0px var(--black);
   }
 
   .hero-section {
-    padding: 32px 0 56px;
+    padding: 28px 0 54px;
   }
 
   .hero-title-3d {
@@ -1803,22 +2050,67 @@ ul {
     margin-bottom: 20px;
   }
 
+  .hero-visual {
+    padding: 6px 14px 12px 6px;
+  }
+
   .photo-3d-stage {
-    max-width: 300px;
+    max-width: 295px;
+    perspective: 950px;
   }
 
   .photo-layer-back-blue {
-    transform: translate3d(11px, 11px, -24px);
+    border-radius: 20px;
+    transform: translate3d(calc(10px + var(--layer-x) * 0.9), calc(10px + var(--layer-y) * 0.9), -22px);
   }
 
   .photo-layer-back-black {
-    transform: translate3d(5.5px, 5.5px, -12px);
+    border-radius: 20px;
+    transform: translate3d(calc(5px + var(--layer-x) * 0.5), calc(5px + var(--layer-y) * 0.5), -11px);
+  }
+
+  .photo-frame-main {
+    border-radius: 18px;
+  }
+
+  .photo-footer-bar {
+    padding: 12px 15px;
+  }
+
+  .photo-name {
+    font-size: 0.82rem;
+  }
+
+  .photo-role {
+    font-size: 0.68rem;
+  }
+
+  .verified-badge {
+    width: 30px;
+    height: 30px;
   }
 
   .badge-indonesia {
-    bottom: 56px;
-    left: -8px;
-    padding: 5px 12px 5px 7px;
+    bottom: 72px;
+    left: 10px;
+    padding: 4.5px 11px 4.5px 6.5px;
+    gap: 7px;
+    box-shadow: 2.5px 2.5px 0px var(--black);
+    transform: translate3d(calc(var(--layer-x) * -0.45), calc(var(--layer-y) * -0.45), 22px);
+  }
+
+  .flag-id {
+    width: 19px;
+    height: 13px;
+  }
+
+  .badge-id-divider {
+    height: 10px;
+  }
+
+  .badge-id-text {
+    font-size: 0.64rem;
+    letter-spacing: 0.09em;
   }
 
   .hero-actions {
@@ -1855,12 +2147,18 @@ ul {
   .skill-section,
   .project-section,
   .contact-section {
-    padding: 60px 0;
+    padding: 56px 0;
   }
 
   .skill-grid {
     grid-template-columns: 1fr;
     gap: 18px;
+  }
+
+  .skill-card-3d,
+  .project-card-3d,
+  .contact-card-3d {
+    box-shadow: 3.5px 3.5px 0px var(--black);
   }
 
   .skill-card-top {
@@ -1907,6 +2205,7 @@ ul {
   .contact-banner-3d {
     padding: 26px 18px;
     border-radius: 20px;
+    box-shadow: 4.5px 4.5px 0px var(--black);
   }
 
   .contact-grid {
@@ -1918,39 +2217,90 @@ ul {
     padding: 20px;
   }
 
-  /* Modal Detail Project Responsif di Layar HP */
   .project-modal-backdrop {
-    padding: 12px;
+    padding: 8px;
   }
 
   .project-modal-card {
-    max-height: 92vh;
-    border-radius: 16px;
+    width: 100%;
+    max-width: 100%;
+    max-height: 94vh;
+    border-radius: 18px;
     box-shadow: 5px 5px 0px var(--black);
   }
 
+  .modal-header-bar {
+    padding: 12px 16px;
+  }
+
+  .modal-header-id {
+    font-size: 0.76rem;
+  }
+
+  .modal-close-btn {
+    width: 34px;
+    height: 34px;
+    font-size: 0.92rem;
+  }
+
   .modal-body {
-    padding: 16px;
+    padding: 18px 16px 20px;
   }
 
   .modal-photo-frame {
-    max-height: 260px;
+    min-height: 260px;
+    max-height: 55vh;
+    padding: 6px;
+    margin-bottom: 16px;
+    border-radius: 13px;
   }
 
   .modal-project-img {
-    max-height: 260px;
+    max-height: 53vh;
+    width: 100%;
+    object-fit: contain;
+  }
+
+  .modal-photo-thumbs {
+    gap: 10px;
+    margin-bottom: 16px;
+  }
+
+  .modal-thumb-btn {
+    width: 78px;
+    height: 56px;
+    border-radius: 9px;
   }
 
   .modal-title {
-    font-size: 1.22rem;
+    font-size: 1.35rem;
+    margin-bottom: 8px;
+  }
+
+  .modal-desc {
+    font-size: 0.96rem;
+    line-height: 1.62;
+    margin-bottom: 16px;
+  }
+
+  .modal-tech {
+    margin-bottom: 20px;
+  }
+
+  .modal-tech .tech-pill {
+    font-size: 0.78rem;
+    padding: 4px 11px;
   }
 
   .modal-actions {
     flex-direction: column;
+    gap: 10px;
   }
 
   .modal-actions .btn-3d {
     width: 100%;
+    padding: 13px 18px;
+    font-size: 0.94rem;
   }
 
   .footer-inner {
@@ -1982,6 +2332,223 @@ ul {
   }
 
   .photo-3d-stage {
-    max-width: 270px;
+    max-width: 268px;
+  }
+
+  .badge-indonesia {
+    bottom: 64px;
+    left: 8px;
+    padding: 4px 10px 4px 6px;
+  }
+
+  .project-modal-backdrop {
+    padding: 6px;
+  }
+
+  .modal-photo-frame {
+    min-height: 240px;
+    max-height: 56vh;
+  }
+
+  .modal-project-img {
+    max-height: 54vh;
+  }
+}
+
+
+@media (max-width: 992px) {
+  .hero-grid {
+    grid-template-columns: minmax(0, 1fr) clamp(132px, 38vw, 310px);
+    grid-template-areas:
+      "badge   visual"
+      "title   visual"
+      "desc    visual"
+      "tags    tags"
+      "actions actions"
+      "stats   stats";
+    column-gap: clamp(14px, 4vw, 40px);
+    row-gap: 0;
+    align-items: start;
+  }
+
+  .hero-content {
+    display: contents;
+  }
+
+  .hero-content > .status-badge {
+    grid-area: badge;
+    justify-self: start;
+  }
+
+  .hero-content > .title-3d-stage {
+    grid-area: title;
+  }
+
+  .hero-content > .hero-desc {
+    grid-area: desc;
+  }
+
+  .hero-content > .skill-tags {
+    grid-area: tags;
+  }
+
+  .hero-content > .hero-actions {
+    grid-area: actions;
+  }
+
+  .hero-content > .hero-stats {
+    grid-area: stats;
+  }
+
+  .hero-visual {
+    grid-area: visual;
+    order: 0;
+    align-self: center;
+    justify-content: flex-end;
+    padding: 4px 12px 12px 0;
+  }
+
+  .photo-3d-stage {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 26px 0 50px;
+  }
+
+  .hero-grid {
+    grid-template-columns: minmax(0, 1fr) clamp(128px, 39vw, 260px);
+    column-gap: 14px;
+  }
+
+  .hero-content > .status-badge {
+    gap: 6px;
+    padding: 4px 10px;
+    font-size: 0.58rem;
+    letter-spacing: 0.04em;
+    margin-bottom: 14px;
+    box-shadow: 2px 2px 0px var(--emerald);
+  }
+
+  .hero-content > .status-badge .status-dot {
+    width: 6px;
+    height: 6px;
+  }
+
+  .title-3d-stage {
+    margin-bottom: 14px;
+  }
+
+  .hero-title-3d {
+    font-size: clamp(1.45rem, 6.6vw, 2.4rem);
+    gap: 2px;
+  }
+
+  .hero-desc {
+    font-size: clamp(0.8rem, 3.4vw, 0.95rem);
+    line-height: 1.55;
+    margin-bottom: 20px;
+  }
+
+  .hero-visual {
+    padding: 2px 8px 8px 0;
+  }
+
+  .photo-layer-back-blue {
+    border-radius: 14px;
+    transform: translate3d(calc(7px + var(--layer-x) * 0.6), calc(7px + var(--layer-y) * 0.6), -18px);
+  }
+
+  .photo-layer-back-black {
+    border-radius: 14px;
+    transform: translate3d(calc(3.5px + var(--layer-x) * 0.35), calc(3.5px + var(--layer-y) * 0.35), -9px);
+  }
+
+  .photo-frame-main {
+    border-radius: 13px;
+  }
+
+  .photo-header-bar {
+    gap: 4px;
+    padding: 6px 9px;
+  }
+
+  .bar-dot {
+    width: 5px;
+    height: 5px;
+  }
+
+  .bar-title {
+    font-size: 0.46rem;
+    letter-spacing: 0.06em;
+  }
+
+  .photo-footer-bar {
+    gap: 6px;
+    padding: 7px 9px;
+  }
+
+  .photo-name {
+    font-size: clamp(0.52rem, 2.3vw, 0.78rem);
+    line-height: 1.25;
+  }
+
+  .photo-role {
+    font-size: clamp(0.5rem, 2vw, 0.66rem);
+  }
+
+  .verified-badge {
+    width: clamp(20px, 6vw, 28px);
+    height: clamp(20px, 6vw, 28px);
+    border-width: 1.25px;
+    box-shadow: 1.5px 1.5px 0px var(--black);
+  }
+
+  .badge-indonesia {
+    top: 28px;
+    bottom: auto;
+    left: 6px;
+    gap: 5px;
+    padding: 2.5px 7px 2.5px 4px;
+    border-width: 1.25px;
+    box-shadow: 1.5px 1.5px 0px var(--black);
+    transform: translate3d(calc(var(--layer-x) * -0.3), calc(var(--layer-y) * -0.3), 16px);
+  }
+
+  .flag-id {
+    width: 13px;
+    height: 9px;
+    border-radius: 2px;
+    border-width: 1px;
+  }
+
+  .badge-id-divider {
+    height: 8px;
+    width: 1px;
+  }
+
+  .badge-id-text {
+    font-size: 0.48rem;
+    letter-spacing: 0.08em;
+  }
+}
+
+@media (max-width: 420px) {
+  .hero-grid {
+    grid-template-columns: minmax(0, 1fr) clamp(120px, 38vw, 170px);
+    column-gap: 12px;
+  }
+
+  .photo-3d-stage {
+    max-width: 100%;
+  }
+
+  .badge-indonesia {
+    top: 26px;
+    bottom: auto;
+    left: 5px;
+    padding: 2px 6px 2px 3.5px;
   }
 }
