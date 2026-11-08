@@ -161,7 +161,20 @@ const projectsData = [
     tech: ["Fullstack", "beta", "In Development"],
     images: ["assets/evolia.png"],
     externalLink: ""
-  }
+  },
+  {
+    id: "07",
+    title: "f3ndEcK",
+    category: "iot",
+    categoryLabel: "ioT",
+    year: "2026",
+    status: "done",
+    description:
+      "f3ndEcK mudahnya alat seperti streamdeck dengan fitur yang bisa di custom sesuai kebutuhan, dan bisa di integrasikan dengan software apapun.",
+    tech: ["ioT", "Tools"],
+    images: ["assets/fendek.jpg", "assets/esp32.jpg"],
+    externalLink: ""
+  },
 ];
 
 const skillGrid = document.getElementById("skillGrid");
